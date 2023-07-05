@@ -1,0 +1,265 @@
+﻿#debugHost {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    color: #4a4a4a;
+    height: 100%;
+}
+
+#debugHostBtn {
+    order: 4;
+}
+
+#debugHostBtn a {
+    background: url('images/console_panel_on.svg') no-repeat center center, linear-gradient(transparent, transparent);
+}
+
+#debugHostBtn a.selected, #debugHostBtn a.selected:hover {
+    background: url('images/console_panel_off.svg') no-repeat center center, linear-gradient(transparent, transparent);
+}
+
+#debugToolbar {
+    margin-left: 8px;
+}
+
+#variablesClearLink {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#variablesClearLink:hover {
+    color: #0a6cd6;
+}
+
+#traceClearLink {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+#traceClearLink:hover {
+    color: #0a6cd6;
+}
+
+#debugScrollContainer 
+{
+    overflow: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+}
+
+#debugContainer {
+    padding: 10px 0px 10px 0px;
+}
+
+#consoleTitle {
+    clear: right;
+    margin: 12px 0px;
+}
+
+.variableName
+{
+	font-weight: bold;
+}
+
+.variableDiv
+{
+    margin-bottom: 20px;
+    line-height: 16px;
+
+}
+
+#variablesDiv
+{
+    clear: right;
+}
+
+#variablesContainer {
+    border-bottom: solid 1px #e7e7e7;
+    padding: 0px 10px 12px 10px;
+}
+
+#traceContainer {
+    margin-bottom: 5px;
+    padding: 15px 10px 0px 10px;
+}
+
+#variablesTitle {
+    margin-bottom: 9px;
+}
+
+.sectionTitle {
+    font-size: 11px;
+    color: #2c2c2c;
+    display: inline-block;
+}
+
+.debugToolbarButton 
+{
+	font-size: 1em;
+	color: #069;
+}
+
+.axEventBlock {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0px 5px 0px;
+    line-height: 21px;
+    border-bottom: solid 5px #e7e7e7;
+}
+
+.axEventContainer {
+    background-color: #e7e7e7;
+    padding: 0px 10px 0px 10px;
+}
+
+.axTime {
+    margin: 0px 0px 0px 5px;
+    font-size: 10px;
+    color: #575757;
+    display: inline-block;
+    float: right;
+}
+
+.axLabel {
+    display: inline-block;
+}
+
+.axEvent {
+    margin: 0px 0px 2px 0px;    
+    font-size: 15px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.axCaseContainer, .axActionContainer, .axInfoContainer {
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+}
+    .axCaseContainer {
+        border-top: solid 2px #e7e7e7;
+        /*background-color: #47b6b5;*/
+        background-color: #e7e7e7;
+        /*color: #ffffff;*/
+    }
+    .axActionContainer {
+        border-top: solid 3px #e7e7e7;
+    }
+    .axInfoContainer {
+        border-top: solid 1px #e7e7e7;
+    }
+
+.axCaseItem, .axActionItem, .axInfoItem {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+    .axCaseItem {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .axActionItem {
+        font-weight: bold;
+    }
+    .axInfoItem {
+        color: #8c8c8c;
+    }
+
+.axCaseDescription {
+    flex: 5 0 33%;
+    margin-left: 10px;
+    text-align: right;
+}
+/*.axActionDescription, .axInfoDescription {
+    flex: 5 0 33%;
+    margin-left: 10px;
+    text-align: right;
+}*/
+    .axCaseDescription, .axActionDescription {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .axInfoDescription, .axActionDescription {
+        color: #8c8c8c;
+        font-size: 11px;
+    }
+
+.variableName {
+    width: 55%;
+    line-height: 0.92;
+    text-align: left;
+    color: #0891b3;
+    display: inline-block;
+    word-wrap: break-word;
+    vertical-align: top;
+}
+
+.variableValue {
+    width: 45%;
+    line-height: 0.92;
+    text-align: right;
+    color: #373d48;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.traceEvent {
+    border-bottom: solid 1px #e7e7e7;
+}
+
+.tracePausedNotification {
+    height: 25px;
+    /*background-color: #e7e7e7;*/
+    border-radius: 5px;
+    line-height: 25px;
+    margin: 5px 10px;
+    text-align: center
+}
+
+#traceEmptyState.emptyStateContainer {
+    margin-top: 0px;
+}
+
+.variableList{
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.traceOption {
+    margin-left: 11px;
+    height: 16px;
+    float: right;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.45;
+    text-align: right;
+    color: #8c8c8c;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.startInstructions {
+    margin: auto;
+    width: 179px;
+    font-size: 11px;
+    text-align: center;
+    color: #666666;
+}
+
+.startButton {
+    margin: auto;
+    margin-top: 10px;
+    width: 181px;
+    height: 24px;
+    border-radius: 2px;
+    border: solid 1px #008fe0;
+    text-align: center;
+    line-height: 24px;
+    color: #008fe0;
+    cursor: pointer;
+}
+
+.debugLinksContainer {
+    text-align: right;
+}

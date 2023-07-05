@@ -1,0 +1,563 @@
+
+{
+  "header": {
+    "reportVersion": 2,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210610.155436.5628.0.001.json",
+    "dumpEventTime": "2021-06-10T15:54:36Z",
+    "dumpEventTimeStamp": "1623311676251",
+    "processId": 5628,
+    "threadId": null,
+    "cwd": "E:\\workSpace\\vue\\project-rjwm-admin-vue-ts",
+    "commandLine": [
+      "D:\\tools\\languageEnv\\node\\node.exe",
+      "E:\\workSpace\\vue\\project-rjwm-admin-vue-ts\\node_modules\\.bin\\\\..\\@vue\\cli-service\\bin\\vue-cli-service.js",
+      "serve"
+    ],
+    "nodejsVersion": "v12.16.3",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.16.3",
+      "v8": "7.8.279.23-node.35",
+      "uv": "1.34.2",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.16.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.4",
+      "http_parser": "2.9.3",
+      "openssl": "1.1.1g",
+      "cldr": "36.0",
+      "icu": "65.1",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.16.3/node-v12.16.3-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.16.3/node-v12.16.3.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.16.3/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "6.1.7601",
+    "osVersion": "Windows 7 Ultimate Service Pack 1",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 3591486,
+        "nice": 0,
+        "sys": 1681331,
+        "idle": 108769263,
+        "irq": 46238
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 338896,
+        "nice": 0,
+        "sys": 93975,
+        "idle": 113608882,
+        "irq": 405
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 3468385,
+        "nice": 0,
+        "sys": 1302514,
+        "idle": 109270744,
+        "irq": 200055
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 176905,
+        "nice": 0,
+        "sys": 38235,
+        "idle": 113826348,
+        "irq": 421
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 4137349,
+        "nice": 0,
+        "sys": 1150803,
+        "idle": 108753226,
+        "irq": 9438
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 888410,
+        "nice": 0,
+        "sys": 944632,
+        "idle": 112208212,
+        "irq": 72150
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 6490156,
+        "nice": 0,
+        "sys": 1070510,
+        "idle": 106480463,
+        "irq": 8564
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 292845,
+        "nice": 0,
+        "sys": 51558,
+        "idle": 113696602,
+        "irq": 546
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 4281728,
+        "nice": 0,
+        "sys": 1129150,
+        "idle": 108630001,
+        "irq": 10467
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 293453,
+        "nice": 0,
+        "sys": 272814,
+        "idle": 113474472,
+        "irq": 186935
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 5714737,
+        "nice": 0,
+        "sys": 1403431,
+        "idle": 106922461,
+        "irq": 11216
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-5820K CPU @ 3.30GHz",
+        "speed": 3300,
+        "user": 211599,
+        "nice": 0,
+        "sys": 78187,
+        "idle": 113750703,
+        "irq": 514
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "本地连接",
+        "internal": false,
+        "mac": "1c:1b:0d:06:51:e4",
+        "address": "fe80::24eb:8f76:cede:ceab",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 11
+      },
+      {
+        "name": "本地连接",
+        "internal": false,
+        "mac": "1c:1b:0d:06:51:e4",
+        "address": "172.16.43.194",
+        "netmask": "255.255.192.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "CZBK-20200409KQ"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x000000013f652449",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+11577"
+    },
+    {
+      "pc": "0x000000013f6569a9",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+29337"
+    },
+    {
+      "pc": "0x000000013f655828",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24856"
+    },
+    {
+      "pc": "0x000000013f78d8c2",
+      "symbol": "v8::base::CPU::has_sse+68658"
+    },
+    {
+      "pc": "0x000000013ffa9bbe",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x000000013ff91c91",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x000000013fe5e1ec",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x000000013fe69420",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x000000013fe65f44",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x000000013fe5b743",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x000000013fe59db4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2452"
+    },
+    {
+      "pc": "0x000000013fe7afbd",
+      "symbol": "v8::internal::Factory::NewFillerObject+61"
+    },
+    {
+      "pc": "0x000000013fbe1871",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+1665"
+    },
+    {
+      "pc": "0x00000001403f6c4d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+546637"
+    },
+    {
+      "pc": "0x00000001403f7d43",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+550979"
+    },
+    {
+      "pc": "0x00000079aa1ccd2b",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2163404800,
+    "totalCommittedMemory": 2163404800,
+    "usedMemory": 2120118744,
+    "availableMemory": 57120176,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 32808,
+        "used": 32808,
+        "available": 0
+      },
+      "new_space": {
+        "memorySize": 23068672,
+        "committedMemory": 23068672,
+        "capacity": 11522016,
+        "used": 1072552,
+        "available": 10449464
+      },
+      "old_space": {
+        "memorySize": 1236938752,
+        "committedMemory": 1236938752,
+        "capacity": 1229757864,
+        "used": 1229019664,
+        "available": 738200
+      },
+      "code_space": {
+        "memorySize": 4362240,
+        "committedMemory": 4362240,
+        "capacity": 3741600,
+        "used": 3741600,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 18616320,
+        "committedMemory": 18616320,
+        "capacity": 6707520,
+        "used": 6707520,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 879239168,
+        "committedMemory": 879239168,
+        "capacity": 878721496,
+        "used": 878721496,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 917504,
+        "committedMemory": 917504,
+        "capacity": 823104,
+        "used": 823104,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 11522016,
+        "used": 0,
+        "available": 11522016
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 1001.07,
+    "kernelCpuSeconds": 47.767,
+    "cpuConsumptionPercent": 15.9084,
+    "maxRss": 3146252288,
+    "pageFaults": {
+      "IORequired": 7262522,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 57874,
+      "writes": 276
+    }
+  },
+  "libuv": [
+  ],
+  "workers": [
+  ],
+  "environmentVariables": {
+    "=E:": "E:\\workSpace\\vue\\project-rjwm-admin-vue-ts",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "ANDROID_HOME": "D:\\tools\\languageEnv\\androidSdk",
+    "ANDROID_SDK_HOME": "D:\\tools\\languageEnv\\androidSdk",
+    "APPDATA": "C:\\Users\\itcast\\AppData\\Roaming",
+    "BABEL_ENV": "development",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_2628_OSFCTUHMTXXCSAUA",
+    "CLASSPATH": ".;D:\\tools\\languageEnv\\java\\lib;D:\\tools\\languageEnv\\java\\lib\\tools.jar;",
+    "COLORTERM": "truecolor",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "CZBK-20200409KQ",
+    "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+    "FLUTTER_STORAGE_BASE_URL": "https://storage.flutter-io.cn",
+    "FP_NO_HOST_CHECK": "NO",
+    "GIT_ASKPASS": "d:\\tools\\codeTools\\vscode\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
+    "GRADLE_HOME": "D:\\tools\\languageEnv\\gradle\\gradle-6.6",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\itcast",
+    "INIT_CWD": "E:\\workSpace\\vue\\project-rjwm-admin-vue-ts",
+    "JAVA_HOME": "D:\\tools\\languageEnv\\java",
+    "LANG": "zh_CN.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\itcast\\AppData\\Local",
+    "LOGONSERVER": "\\\\CZBK-20200409KQ",
+    "MAVEN_HOME": "D:\\tools\\languageEnv\\maven\\apache-maven-3.8.1",
+    "NODE": "D:\\tools\\languageEnv\\node\\node.exe",
+    "NODE_ENV": "development",
+    "NODE_PATH": "D:\\tools\\languageEnv\\node_global\\node_modules",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"serve\"],\"original\":[\"serve\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_cache": "D:\\tools\\languageEnv\\node\\node_cache",
+    "npm_config_disturl": "https://npm.taobao.org/dist",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_msvs_version": "2017",
+    "npm_config_prefix": "D:\\tools\\languageEnv\\node\\node_global",
+    "npm_config_registry": "https://registry.npm.taobao.org",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.22.4 npm/? node/v12.16.3 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "D:\\tools\\languageEnv\\yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "serve",
+    "npm_lifecycle_script": "vue-cli-service serve",
+    "npm_node_execpath": "D:\\tools\\languageEnv\\node\\node.exe",
+    "npm_package_author_email": "armourcy@gmail.com",
+    "npm_package_author_name": "Chong Guo",
+    "npm_package_dependencies_area_data": "^5.0.6",
+    "npm_package_dependencies_axios": "^0.19.0",
+    "npm_package_dependencies_echarts": "^4.6.0",
+    "npm_package_dependencies_element_ui": "^2.12.0",
+    "npm_package_dependencies_js_cookie": "^2.2.1",
+    "npm_package_dependencies_moment": "^2.24.0",
+    "npm_package_dependencies_normalize_css": "^8.0.1",
+    "npm_package_dependencies_nprogress": "^0.2.0",
+    "npm_package_dependencies_path_to_regexp": "^3.0.0",
+    "npm_package_dependencies_register_service_worker": "^1.6.2",
+    "npm_package_dependencies_vue": "^2.6.10",
+    "npm_package_dependencies_vuex": "^3.1.1",
+    "npm_package_dependencies_vuex_class": "^0.3.2",
+    "npm_package_dependencies_vuex_module_decorators": "^0.10.1",
+    "npm_package_dependencies_vuex_persistedstate": "^2.7.0",
+    "npm_package_dependencies_vue_area_linkage": "^5.1.0",
+    "npm_package_dependencies_vue_class_component": "^7.1.0",
+    "npm_package_dependencies_vue_property_decorator": "^8.2.2",
+    "npm_package_dependencies_vue_router": "^3.1.2",
+    "npm_package_dependencies_vue_svgicon": "^3.2.6",
+    "npm_package_dependencies__types_echarts": "^4.4.6",
+    "npm_package_dependencies__types_webpack": "^4.41.12",
+    "npm_package_description": "## 1 pc端需求概述",
+    "npm_package_devDependencies_babel_core": "^7.0.0-bridge.0",
+    "npm_package_devDependencies_babel_eslint": "^10.0.3",
+    "npm_package_devDependencies_eslint": "^6.2.2",
+    "npm_package_devDependencies_eslint_plugin_vue": "^5.2.3",
+    "npm_package_devDependencies_fibers": "^4.0.1",
+    "npm_package_devDependencies_jest": "^24.9.0",
+    "npm_package_devDependencies_sass": "^1.22.10",
+    "npm_package_devDependencies_sass_loader": "^7.3.1",
+    "npm_package_devDependencies_style_resources_loader": "^1.2.1",
+    "npm_package_devDependencies_ts_jest": "^24.0.2",
+    "npm_package_devDependencies_typescript": "3.6.2",
+    "npm_package_devDependencies_vue_cli_plugin_element": "^1.0.1",
+    "npm_package_devDependencies_vue_cli_plugin_style_resources_loader": "^0.1.3",
+    "npm_package_devDependencies_vue_template_compiler": "^2.6.10",
+    "npm_package_devDependencies_webpack": "^4.39.3",
+    "npm_package_devDependencies__types_jest": "^24.0.18",
+    "npm_package_devDependencies__types_js_cookie": "^2.2.2",
+    "npm_package_devDependencies__types_nprogress": "^0.2.0",
+    "npm_package_devDependencies__types_webpack_env": "^1.14.0",
+    "npm_package_devDependencies__vue_cli_plugin_babel": "^3.11.0",
+    "npm_package_devDependencies__vue_cli_plugin_e2e_cypress": "^3.11.0",
+    "npm_package_devDependencies__vue_cli_plugin_eslint": "^3.11.0",
+    "npm_package_devDependencies__vue_cli_plugin_pwa": "^3.11.0",
+    "npm_package_devDependencies__vue_cli_plugin_typescript": "^3.11.0",
+    "npm_package_devDependencies__vue_cli_plugin_unit_jest": "^3.11.0",
+    "npm_package_devDependencies__vue_cli_service": "^3.11.0",
+    "npm_package_devDependencies__vue_eslint_config_standard": "^4.0.0",
+    "npm_package_devDependencies__vue_eslint_config_typescript": "^4.0.0",
+    "npm_package_devDependencies__vue_test_utils": "^1.0.0-beta.29",
+    "npm_package_license": "MIT",
+    "npm_package_name": "vue-typescript-admin-template",
+    "npm_package_private": "true",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_scripts_build": "vue-cli-service build",
+    "npm_package_scripts_lint": "vue-cli-service lint",
+    "npm_package_scripts_serve": "vue-cli-service serve",
+    "npm_package_scripts_svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6",
+    "npm_package_scripts_test_e2e": "vue-cli-service test:e2e",
+    "npm_package_scripts_test_unit": "vue-cli-service test:unit",
+    "npm_package_version": "0.1.0",
+    "NUMBER_OF_PROCESSORS": "12",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\itcast\\AppData\\Local\\Temp\\yarn--1623305083040-0.16842799735602587;E:\\workSpace\\vue\\project-rjwm-admin-vue-ts\\node_modules\\.bin;C:\\Users\\itcast\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;D:\\tools\\languageEnv\\node\\node_global\\bin;D:\\tools\\languageEnv\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;D:\\tools\\languageEnv\\lib\\node_modules\\npm\\bin\\node-gyp-bin;D:\\tools\\languageEnv\\node\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;D:\\tools\\languageEnv\\node;D:\\tools\\editTools\\ue\\;D:\\tools\\codeTools\\vscode\\Microsoft VS Code\\bin;D:\\tools\\languageEnv\\yarn\\bin\\;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0;D:\\tools\\languageEnv\\androidSdk\\platform-tools;D:\\tools\\languageEnv\\androidSdk\\tools;D:\\tools\\languageEnv\\gradle\\gradle-6.6\\bin;D:\\tools\\languageEnv\\node\\node_global;D:\\tools\\managementTools\\Git\\cmd;D:\\tools\\languageEnv\\python;D:\\tools\\languageEnv\\node\\;D:\\tools\\languageEnv\\maven\\apache-maven-3.8.1\\bin;C:\\Windows\\System32;D:\\tools\\languageEnv\\java\\bin;D:\\tools\\languageEnv\\java\\jre\\bin;D:\\tools\\languageEnv\\flutter\\bin;C:\\Users\\itcast\\AppData\\Roaming\\npm",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "Intel64 Family 6 Model 63 Stepping 2, GenuineIntel",
+    "PROCESSOR_LEVEL": "6",
+    "PROCESSOR_REVISION": "3f02",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Users\\itcast\\Documents\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\",
+    "PUBLIC": "C:\\Users\\Public",
+    "PUB_HOSTED_URL": "https://pub.flutter-io.cn",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\Windows",
+    "TEMP": "C:\\Users\\itcast\\AppData\\Local\\Temp",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.56.2",
+    "TMP": "C:\\Users\\itcast\\AppData\\Local\\Temp",
+    "USERDOMAIN": "CZBK-20200409KQ",
+    "USERNAME": "itcast",
+    "USERPROFILE": "C:\\Users\\itcast",
+    "VSCODE_GIT_ASKPASS_MAIN": "d:\\tools\\codeTools\\vscode\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js",
+    "VSCODE_GIT_ASKPASS_NODE": "D:\\tools\\codeTools\\vscode\\Microsoft VS Code\\Code.exe",
+    "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-136ec50daa-sock",
+    "Vue": "D:\\tools\\languageEnv\\node\\node_global\\bin",
+    "VUE_APP_BASE_API": "/api",
+    "VUE_CLI_BABEL_TRANSPILE_MODULES": "true",
+    "VUE_CLI_ENTRY_FILES": "[\"E:\\\\workSpace\\\\vue\\\\project-rjwm-admin-vue-ts\\\\src\\\\main.ts\"]",
+    "WEBPACK_DEV_SERVER": "true",
+    "windir": "C:\\Windows",
+    "windows_tracing_flags": "3",
+    "windows_tracing_logfile": "C:\\BVTBin\\Tests\\installpackage\\csilogfile.log",
+    "WXDRIVE_START_ARGS": "--wxdrive-setting=0 --disable-gpu --disable-software-rasterizer --enable-features=NetworkServiceInProcess",
+    "YARN_WRAP_OUTPUT": "false"
+  },
+  "sharedObjects": [
+    "D:\\tools\\languageEnv\\node\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\system32\\kernel32.dll",
+    "C:\\Windows\\system32\\KERNELBASE.dll",
+    "C:\\Windows\\system32\\ADVAPI32.DLL",
+    "C:\\Windows\\system32\\msvcrt.dll",
+    "C:\\Windows\\SYSTEM32\\sechost.dll",
+    "C:\\Windows\\system32\\RPCRT4.dll",
+    "C:\\Windows\\system32\\dbghelp.dll",
+    "C:\\Windows\\system32\\WS2_32.dll",
+    "C:\\Windows\\system32\\NSI.dll",
+    "C:\\Windows\\system32\\IPHLPAPI.DLL",
+    "C:\\Windows\\system32\\WINNSI.DLL",
+    "C:\\Windows\\system32\\PSAPI.DLL",
+    "C:\\Windows\\system32\\USERENV.dll",
+    "C:\\Windows\\system32\\profapi.dll",
+    "C:\\Windows\\system32\\USER32.dll",
+    "C:\\Windows\\system32\\GDI32.dll",
+    "C:\\Windows\\system32\\LPK.dll",
+    "C:\\Windows\\system32\\USP10.dll",
+    "C:\\Windows\\system32\\CRYPT32.dll",
+    "C:\\Windows\\system32\\MSASN1.dll",
+    "C:\\Windows\\system32\\bcrypt.dll",
+    "C:\\Windows\\system32\\WINMM.dll",
+    "C:\\Windows\\system32\\IMM32.DLL",
+    "C:\\Windows\\system32\\MSCTF.dll",
+    "C:\\Windows\\system32\\api-ms-win-core-synch-l1-2-0.DLL",
+    "C:\\Windows\\system32\\powrprof.dll",
+    "C:\\Windows\\system32\\SETUPAPI.dll",
+    "C:\\Windows\\system32\\CFGMGR32.dll",
+    "C:\\Windows\\system32\\OLEAUT32.dll",
+    "C:\\Windows\\system32\\ole32.dll",
+    "C:\\Windows\\system32\\DEVOBJ.dll",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\System32\\wshtcpip.dll",
+    "C:\\Windows\\System32\\wship6.dll",
+    "C:\\Windows\\system32\\bcryptprimitives.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\system32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\system32\\wshbth.dll",
+    "C:\\Windows\\system32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\system32\\dhcpcsvc.DLL",
+    "\\\\?\\E:\\workSpace\\vue\\project-rjwm-admin-vue-ts\\node_modules\\fibers\\bin\\win32-x64-72\\fibers.node",
+    "C:\\Windows\\system32\\cryptbase.dll",
+    "C:\\Windows\\system32\\apphelp.dll"
+  ]
+}

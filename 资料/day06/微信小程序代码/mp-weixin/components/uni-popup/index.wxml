@@ -1,0 +1,1 @@
+<view class="{{['popup-content',(type==='left'||type==='right')?'popup-height':'']}}"><text class="text">请联系商家进行取消！</text></view>

@@ -1,0 +1,268 @@
+﻿.ax_default {
+  font-family:'MicrosoftYaHei', '微软雅黑';
+  font-weight:400;
+  font-style:normal;
+  font-size:13px;
+  letter-spacing:normal;
+  color:#333333;
+  vertical-align:none;
+  text-align:center;
+  line-height:normal;
+  text-transform:none;
+}
+._形状 {
+}
+.box_1 {
+}
+.box_2 {
+}
+.box_3 {
+}
+._图片_ {
+  color:#000000;
+}
+.primary_button {
+  color:#FFFFFF;
+}
+._一级标题 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+._二级标题 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+._三级标题 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:18px;
+  text-align:left;
+}
+._四级标题 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:14px;
+  text-align:left;
+}
+._五级标题 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  text-align:left;
+}
+._六级标题 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:10px;
+  text-align:left;
+}
+.label {
+  font-size:14px;
+  text-align:left;
+}
+._文本段落 {
+  text-align:left;
+}
+.text_field {
+  color:#000000;
+  text-align:left;
+}
+.text_area {
+  color:#000000;
+  text-align:left;
+}
+.list_box {
+  color:#000000;
+  text-align:left;
+}
+._表单提示 {
+  color:#999999;
+}
+._表单禁用 {
+}
+._流程形状 {
+  font-family:'Arial Normal', 'Arial';
+  font-weight:400;
+  font-style:normal;
+}
+._线段 {
+}
+._连接 {
+  font-family:'PingFang-SC-ExtraLight', 'PingFang SC ExtraLight', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:20px;
+  color:#D9001B;
+}
+.marker {
+  color:#FFFFFF;
+}
+.form_hint {
+  color:#999999;
+}
+.form_disabled {
+}
+.flow_shape {
+}
+._形状1 {
+  font-family:'Microsoft YaHei UI Bold', 'Microsoft YaHei UI';
+  font-weight:700;
+  font-style:normal;
+  color:#FF0066;
+}
+.icon {
+}
+.table_cell {
+}
+.ellipse {
+}
+.text_link {
+  color:#0000FF;
+}
+.text_link_mouse_over {
+}
+.text_link_mouse_down {
+}
+.image {
+  color:#000000;
+}
+.paragraph {
+  text-align:left;
+}
+.shape {
+}
+.box_11 {
+}
+.box_21 {
+}
+.label1 {
+  font-size:14px;
+  text-align:left;
+}
+.line {
+}
+.box_22 {
+}
+.shape1 {
+}
+.heading_1 {
+  font-family:'MicrosoftYaHei', '微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+.placeholder {
+}
+.button {
+}
+.horizontal_line {
+}
+.droplist {
+  color:#000000;
+  text-align:left;
+}
+.checkbox {
+  text-align:left;
+}
+.radio_button {
+  text-align:left;
+}
+._文本段落1 {
+  text-align:left;
+}
+.heading_11 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:32px;
+  text-align:left;
+}
+.heading_2 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+.connector {
+}
+.vertical_line {
+}
+.iconfont {
+  font-family:'iconfont 中黑体', 'iconfont';
+  font-weight:400;
+  font-style:normal;
+  font-size:18px;
+  color:#666666;
+}
+.arrow {
+}
+._图片 {
+  font-family:'MicrosoftYaHei', '微软雅黑';
+  font-weight:normal;
+  font-style:normal;
+  font-size:13px;
+  color:#000000;
+}
+._二级标题1 {
+  font-family:'MicrosoftYaHei', '微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+._形状2 {
+  font-family:'MicrosoftYaHei-Bold', '微软雅黑 Bold', '微软雅黑';
+  font-weight:700;
+  font-style:normal;
+  color:#FF0066;
+}
+.paragraph1 {
+  text-align:left;
+}
+.heading_21 {
+  font-family:'MicrosoftYaHei', '微软雅黑';
+  font-weight:bold;
+  font-style:normal;
+  font-size:24px;
+  text-align:left;
+}
+._水平线 {
+}
+._32号字_单行列表内，右方操作说明的文字__） {
+  font-family:'PingFang-SC-ExtraLight', 'PingFang SC ExtraLight', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:16px;
+  text-align:left;
+}
+._28号字_页面备注信息及列表的表头说明文字__） {
+  font-family:'PingFang-SC-ExtraLight', 'PingFang SC ExtraLight', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+  font-size:14px;
+  text-align:left;
+}
+._图片1 {
+}
+.refs-webm-wechat {
+  font-family:'PingFang-SC-ExtraLight', 'PingFang SC ExtraLight', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
+}
+.image1 {
+}
+.sticky_1 {
+  text-align:left;
+}
+textarea, select, input, button { outline: none; }

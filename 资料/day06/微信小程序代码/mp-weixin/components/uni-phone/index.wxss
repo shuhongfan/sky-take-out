@@ -1,0 +1,841 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.home_content.data-v-0b00c929 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 160rpx;
+  position: relative;
+}
+.home_content .restaurant_info_box.data-v-0b00c929 {
+  position: relative;
+  color: #20232a;
+  width: 100%;
+  background: linear-gradient(184deg, rgba(0, 0, 0, 0.35) 25%, rgba(51, 51, 51, 0) 96%);
+}
+.home_content .restaurant_info_box .restaurant_info.data-v-0b00c929 {
+  position: absolute;
+  z-index: 9;
+  top: 10rpx;
+  left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 60rpx);
+  background: white;
+  box-shadow: 0px 4rpx 10rpx 0px rgba(69, 69, 69, 0.1);
+  border-radius: 8rpx;
+  padding: 14rpx 18rpx 22rpx 16rpx;
+  box-sizing: border-box;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top.data-v-0b00c929 {
+  flex: 1;
+  display: flex;
+  padding-bottom: 10rpx;
+  border-bottom: 1px dashed #ebebeb;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_left.data-v-0b00c929 {
+  margin-right: 20rpx;
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_left image.data-v-0b00c929 {
+  width: 86rpx;
+  height: 86rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right.data-v-0b00c929 {
+  flex: 1;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_title.data-v-0b00c929 {
+  display: flex;
+  align-items: center;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_title text.data-v-0b00c929 {
+  font-size: 36rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #20232a;
+  line-height: 50rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_details.data-v-0b00c929 {
+  width: 100%;
+  display: flex;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_details .details_flex.data-v-0b00c929 {
+  white-space: nowrap;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_details .details_flex .top_icon.data-v-0b00c929 {
+  width: 28rpx;
+  height: 28rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAADe0lEQVRIS72WTWxUVRTHf2feTF+ZVkHADE5BBjDSBSAyaxJhQUJaTNhoBcKCsGBBXGnMGBKFEHDhSuPHgkAglqEbTSwVPxIxYeHGQRCCbSK0FaxppKRGOv2Yee+S+9689s3Hm3mjxLuaee/e87vnvPM/5wj/85IwPPXti0kKshsiW1F2J8gy95yaQCKDYF8hpr6QHT+PNbJXF6gubU5hGceBHsBoYMwCLmBYR2TntZGgvYFA1Z/OIOodEBNsiP4D0UmIzECk4NqzY2C3QnEJFJ8AItrrWUTela7ce7WgVUB1OdVKftlpFK+BgtgDMP9YgARdXcNnO6CwFHDMZmmbOCDbRmb8R6qBA+nzLsyC+DBE/y5DjE+28ObptfoqvH/gDoklc+VXKC6G/BrvC2SlO7cnEOiGkRMOrG0IjOkqf859n+CD/pXO89d33WP/9vFqn61FMLXehQoZf3jnPVRfblpDJPorYBK/XeWZZ/XUN8/w6ddJ5++hnWMc3PFn7SA7nq7T72Yx7E4vkRaAA+leFHuI3YdFo4EJGRqoLUynoOAoqFe6c/v0Dwfo6Gwu8jvYBu036yZIU0CdSA836Oy1aLGf1Tp1gf1bDiPyoZMg8d/qyq0poLaUfw50eEUdlq6rH7nAi+k+4BXMUTDvP17g3HKYWQ0ifdL1U48LHEhfR7GJ+BBEHz5eYLEd8jpj1XXpvrrZA95FsZL2GxCp0FUF3h/S55N5TuwfJpUo03b5CdssfUfuSXduVdPA7649Rebs2nmjLVHbkcfel8YxdGWrXAHA0CHV9j67nODjr5LMFRcIG1dPcWzfMKuWz1ZUnlohbSJpPGsj460czaa4Mdo2D1i3Ypq+t26VA2smTROy8Fuzbej9IcEnl1xv13fk6X1DFyvfqimL/hc6kOhoGOHXSuG7f5n8OPQk2zZO8vTiUuvSG4OEX5JGqNJWVzOVL4NKmwMMWbxDAxsV75KXGZTXngbBqKOvemR/e1K8LbtyJ73t1Q344pYsSE9QA27oob8BC1npqtOAHS/1iDG19IwL1SPGBJhjIUeMZKkdie5DWeIhRgzPAzWQzqAqhihj0g2zV/7sFrBawaoYopQc9YfRH5X6Y6JOJCN2HMWrocZEoQ+rcERe/mU4KPThBmGtU4zdiGxF6AT0aKbXAxSDKHUFU33+nwfhhgnyLzY8Aj/hjixF6goTAAAAAElFTkSuQmCC) no-repeat;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 4rpx;
+  margin-right: 6rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_details .details_flex .icon_text.data-v-0b00c929 {
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #333333;
+  line-height: 36rpx;
+  padding-right: 20rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_details .test.data-v-0b00c929 {
+  flex: 1;
+}
+.home_content .restaurant_info_box .restaurant_info .info_top .info_top_right .right_details .vertical-line.data-v-0b00c929 {
+  display: inline-block;
+  width: 1px;
+  height: 20rpx;
+  line-height: 20rpx;
+  margin: 16rpx 10rpx;
+  background-color: #ccc;
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom.data-v-0b00c929 {
+  margin-top: 16rpx;
+  display: flex;
+  font-size: 24rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #9b9b9b;
+  line-height: 34rpx;
+  padding: 0 4rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom > view.data-v-0b00c929:first-child {
+  flex: 1;
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom .word.data-v-0b00c929 {
+  display: block;
+  padding-bottom: 20rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom .address.data-v-0b00c929 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom .address icon.data-v-0b00c929 {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAYAAABfqvm9AAAAAXNSR0IArs4c6QAAA6tJREFUSEvtlk2IHEUUx/+vepysHyDsKexBERHUvQgRPCh+RDEGPKntTQxxpmsZdiEbRCKuUhCi5CBRFna6Woco6EFbgjnEU9BFBA9+EJQ9KB42oIiKNh5GcJyeJ6+oGirNbCIY8OJAM9M1Vb/33v99dBMu84cuMw//A/+9ov+ZhsEwXyqGHT1M0zRZXFxkY8ykCTHGtABMZv03C0jGGLkcyBijtre32+12W1VVNS7LcuQNXLAvGG0C5d6F1el09rRarUcA3MvMNzLzLgC/AjhHRGfkyvP8ZzFojJEz7twU6P+YZFl2LYCXADwJ4Cq/MTYsB+X+WyJ6zlr7XjgbA51ny8vLC6PR6BSAOwDUESxORoArIpLfR6y1xwNUFhxsdXX1yuFw+D6ABwGMASReF4GpKDFiSO5FY/kW7kFr7UmBkmSzLMtaa32YmV/2MMliCG1IRF8y8xDA9QBuaXguDv2klNqT5/kPzv1er3fNeDzeAnCd3xy8+gzA4aqqPhWjom+SJEt1XT8P4Gq/VzyVaI4VRbHmgN1udz8RfeDDCqGcr+v6nsFgcN5HMUnTVHnwIQAnGsBPAOx1QK31GjMf9brIklJKreV5fixN03ZZln/J4agSriCir5j5Zp888fD7JEkeCMATzCxWRXCXjCRJHu73+2fikog7JsuydwGkkea/E9EU+CIzP+uBIXMda+1A2swYI1mfNoOEPj8/v8nMd0VO/DL1MMsyKeI3GpqcXVhY2C8w39e0tbXFXsP7iOgsM4vxENXXUw2zLJPsfgNgrpHlV6qqelogIXSt9a3MLPV6k9dcKiIhorestU9MC1tr/TozPxVp4rJNRF8Q0dt1XVdKqduY+QAAac9QpyIFK6X25nm+KRNDmnuitRaLHzPz7qgL4kNBw9CG4kwI92RRFAdd18iu0C1LS0uPTyaTdzwweC+ehpkoay5pEexcXdf3DwaD36bAMPfE0yzLjgN4Ji6hGVM6eO5KxVr7eTwc4tnIKysru0aj0Wlm3ncRqNM3SZID/X7/zRDhBfMwTGERuNPp3KCU+sgPg6aOTjcietVaeyiGzQJO9ex2u/uI6DQAmdQB6mDMvDk3N/fQ+vr6n2H87fQIcOuhO7IsO+Knd0iKJOTHVqt198bGxndN72Z6GLeYeKa1Lpn5sVCfRPSotfbULNhFgSFrvV5v93g8/tAP1qNFUbywE+xSHrpHqC/62wHcycyvFUXxR1O3uKz+yatI/NYwfczOqE239Dee78tnMDt8fAAAAABJRU5ErkJggg==) no-repeat 0 0;
+  background-size: contain;
+  display: inline-block;
+  width: 20rpx;
+  height: 34rpx;
+  margin-right: 10rpx;
+  margin-top: -8rpx;
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom .phone.data-v-0b00c929 {
+  padding: 10rpx 20rpx 10rpx 40rpx;
+  margin-left: 12rpx;
+  margin-top: 12rpx;
+  border-left: 1px solid rgba(219, 219, 219, 0.45);
+}
+.home_content .restaurant_info_box .restaurant_info .info_bottom .phone .phoneIcon.data-v-0b00c929 {
+  vertical-align: -webkit-baseline-middle;
+}
+.home_content .restaurant_menu_list.data-v-0b00c929 {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 260rpx);
+  margin-top: 135rpx;
+}
+.home_content .restaurant_menu_list .type_list.data-v-0b00c929 {
+  display: flex;
+  overflow: hidden;
+  background-color: #f3f4f7;
+  width: 168rpx;
+  padding-top: 140rpx;
+  box-sizing: border-box;
+  padding-bottom: 60rpx;
+  position: relative;
+  font-size: 26rpx;
+}
+.home_content .restaurant_menu_list .type_list .type_item.data-v-0b00c929 {
+  line-height: 100rpx;
+  text-align: left;
+  padding-left: 20rpx;
+  padding-right: 26rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #666666;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.home_content .restaurant_menu_list .type_list .type_item .item.data-v-0b00c929 {
+  line-height: 100rpx;
+}
+.home_content .restaurant_menu_list .type_list .type_item .allLine.data-v-0b00c929 {
+  padding: 16rpx 0;
+  line-height: 34rpx;
+}
+.home_content .restaurant_menu_list .type_list .active.data-v-0b00c929 {
+  color: #333333;
+  background-color: #fff;
+  position: relative;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+}
+.home_content .restaurant_menu_list .type_list .active.data-v-0b00c929::after {
+  background-color: #f3f4f7;
+  border-radius: 0 15rpx 0 0;
+}
+.home_content .restaurant_menu_list .type_list .seize_seat.data-v-0b00c929 {
+  width: 100%;
+  height: 160rpx;
+}
+.home_content .restaurant_menu_list .vegetable_order_list.data-v-0b00c929 {
+  background-color: #fff;
+  padding-top: 140rpx;
+  box-sizing: border-box;
+  height: calc(100% - 0rpx);
+  flex: 1;
+  position: relative;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item.data-v-0b00c929 {
+  display: flex;
+  padding-top: 20rpx;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_img.data-v-0b00c929 {
+  width: 172rpx;
+  margin: 0 30rpx;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_img .dish_img_url.data-v-0b00c929 {
+  display: block;
+  width: 172rpx;
+  height: 172rpx;
+  border-radius: 8rpx;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info.data-v-0b00c929 {
+  position: relative;
+  flex: 1;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_name.data-v-0b00c929 {
+  font-size: 32rpx;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+  color: #333333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100vw - 452rpx);
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_label.data-v-0b00c929,
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_num.data-v-0b00c929 {
+  font-size: 22rpx;
+  line-height: 40rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100vw - 452rpx);
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_price.data-v-0b00c929 {
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 36rpx;
+  color: #e94e3c;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  bottom: 0;
+  letter-spacing: -0.8px;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_price .ico.data-v-0b00c929 {
+  font-size: 24rpx;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_active.data-v-0b00c929 {
+  position: absolute;
+  right: 20rpx;
+  bottom: 0rpx;
+  display: flex;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_active .dish_add.data-v-0b00c929,
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_active .dish_red.data-v-0b00c929 {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_active .dish_number.data-v-0b00c929 {
+  padding: 0 10rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_active_btn.data-v-0b00c929 {
+  position: absolute;
+  right: 20rpx;
+  bottom: 15rpx;
+  display: flex;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .type_item .dish_info .dish_active_btn .check_but.data-v-0b00c929 {
+  width: 128rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  opacity: 1;
+  background: #ffc200;
+  border-radius: 24rpx;
+  font-size: 12px;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  color: #333333;
+}
+.home_content .restaurant_menu_list .vegetable_order_list .seize_seat.data-v-0b00c929 {
+  width: 100%;
+  height: 136rpx;
+}
+.home_content .restaurant_menu_list .no_dish.data-v-0b00c929 {
+  flex: 1;
+  background-color: #ffffff;
+  color: #9b9b9b;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_content .footer_order_buttom.data-v-0b00c929 {
+  position: fixed;
+  display: flex;
+  bottom: 48rpx;
+  width: calc(100% - 60rpx);
+  height: 88rpx;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 50rpx;
+  box-shadow: 0px 6rpx 10rpx 0px rgba(0, 0, 0, 0.25);
+  z-index: 99;
+  padding: 0rpx 10rpx;
+  box-sizing: border-box;
+}
+.home_content .footer_order_buttom .order_number.data-v-0b00c929 {
+  position: relative;
+  width: 120rpx;
+}
+.home_content .footer_order_buttom .order_number .order_number_icon.data-v-0b00c929 {
+  position: absolute;
+  display: block;
+  width: 120rpx;
+  height: 118rpx;
+  left: 12rpx;
+  bottom: 0px;
+}
+.home_content .footer_order_buttom .order_number .order_dish_num.data-v-0b00c929 {
+  position: absolute;
+  display: inline-block;
+  z-index: 9;
+  min-width: 12rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  padding: 0 12rpx;
+  left: 92rpx;
+  font-size: 24rpx;
+  top: -8rpx;
+  border-radius: 20rpx;
+  background-color: #e94e3c;
+  color: #fff;
+  font-weight: 500;
+}
+.home_content .footer_order_buttom .order_price.data-v-0b00c929 {
+  flex: 1;
+  text-align: left;
+  color: #fff;
+  line-height: 88rpx;
+  padding-left: 34rpx;
+  box-sizing: border-box;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+}
+.home_content .footer_order_buttom .order_price .ico.data-v-0b00c929 {
+  font-size: 24rpx;
+}
+.home_content .footer_order_buttom .order_but.data-v-0b00c929 {
+  background-color: #d8d8d8;
+  width: 204rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  border-radius: 72rpx;
+  color: #fff;
+  text-align: center;
+  margin-top: 8rpx;
+}
+.home_content .orderCar.data-v-0b00c929 {
+  flex: 1;
+  display: flex;
+}
+.home_content .order_form .order_but.data-v-0b00c929 {
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+  color: #333333;
+  background: #ffc200;
+}
+.home_content .pop_mask.data-v-0b00c929 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.home_content .pop_mask .pop.data-v-0b00c929 {
+  width: 60%;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+  border-radius: 20rpx;
+}
+.home_content .pop_mask .pop .open_table_cont.data-v-0b00c929 {
+  padding-top: 60rpx;
+}
+.home_content .pop_mask .pop .open_table_cont .cont_tit.data-v-0b00c929 {
+  font-size: 36rpx;
+  color: #20232a;
+  text-align: center;
+}
+.home_content .pop_mask .pop .open_table_cont .people_num_act.data-v-0b00c929 {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+.home_content .pop_mask .pop .open_table_cont .people_num_act .red.data-v-0b00c929,
+.home_content .pop_mask .pop .open_table_cont .people_num_act .add.data-v-0b00c929 {
+  width: 112rpx;
+  height: 112rpx;
+}
+.home_content .pop_mask .pop .open_table_cont .people_num_act .people_num.data-v-0b00c929 {
+  line-height: 112rpx;
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  color: #20232a;
+}
+.home_content .pop_mask .pop .butList.data-v-0b00c929 {
+  background: #f7f7f7;
+  display: flex;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.home_content .pop_mask .pop .butList .define.data-v-0b00c929 {
+  flex: 1;
+  font-size: 36rpx;
+  line-height: 100rpx;
+}
+.home_content .pop_mask .pop .butList .cancel.data-v-0b00c929 {
+  flex: 1;
+  font-size: 36rpx;
+  line-height: 100rpx;
+}
+.home_content .pop_mask .cart_pop.data-v-0b00c929 {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60vh;
+  background-color: #fff;
+  border-radius: 8rpx 8rpx 0 0;
+  padding: 20rpx 30rpx 30rpx 30rpx;
+  box-sizing: border-box;
+}
+.home_content .pop_mask .cart_pop .top_title.data-v-0b00c929 {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #ebeef5;
+  padding-bottom: 20rpx;
+}
+.home_content .pop_mask .cart_pop .top_title .tit.data-v-0b00c929 {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #20232a;
+}
+.home_content .pop_mask .cart_pop .top_title .clear.data-v-0b00c929 {
+  color: #999999;
+  font-size: 28rpx;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  font-family: PingFangSC, PingFangSC-Regular;
+}
+.home_content .pop_mask .cart_pop .top_title .clear .clear_icon.data-v-0b00c929 {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+}
+.home_content .pop_mask .cart_pop .top_title .clear .clear-des.data-v-0b00c929 {
+  height: 56rpx;
+  line-height: 56rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list.data-v-0b00c929 {
+  background-color: #fff;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  height: calc(100% - 0rpx);
+  flex: 1;
+  position: relative;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item_cont .user_info.data-v-0b00c929 {
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item_cont .user_info .user_avatar.data-v-0b00c929 {
+  margin-right: 20rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item_cont .user_info .user_avatar .user_avatar_icon.data-v-0b00c929 {
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 42rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item_cont .user_info .user_name.data-v-0b00c929 {
+  color: #19232b;
+  font-size: 24rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item.data-v-0b00c929 {
+  display: flex;
+  margin-bottom: 40rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_img.data-v-0b00c929 {
+  width: 128rpx;
+  margin-right: 30rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_img .dish_img_url.data-v-0b00c929 {
+  display: block;
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 8rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info.data-v-0b00c929 {
+  position: relative;
+  flex: 1;
+  padding-bottom: 120rpx;
+  border-bottom: solid 1px #ebeef5;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_name.data-v-0b00c929 {
+  font-size: 32rpx;
+  line-height: 40rpx;
+  color: #333333;
+  font-family: PingFangSC, PingFangSC-Semibold;
+  font-weight: 600;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_price.data-v-0b00c929 {
+  font-size: 32rpx;
+  color: #e94e3c;
+  position: absolute;
+  bottom: 24rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_price .ico.data-v-0b00c929 {
+  font-size: 24rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_active.data-v-0b00c929 {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  display: flex;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_active .dish_add.data-v-0b00c929,
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_active .dish_red.data-v-0b00c929 {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+}
+.home_content .pop_mask .cart_pop .card_order_list .type_item .dish_info .dish_active .dish_number.data-v-0b00c929 {
+  padding: 0 10rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+}
+.home_content .pop_mask .cart_pop .card_order_list.data-v-0b00c929::before {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 120rpx;
+  z-index: 99;
+  background: linear-gradient(0deg, white 10%, rgba(255, 255, 255, 0));
+  bottom: 0px;
+  left: 0px;
+}
+.home_content .pop_mask .cart_pop .card_order_list .seize_seat.data-v-0b00c929 {
+  width: 100%;
+  height: 120rpx;
+}
+.home_content .pop_mask .cart_pop .dish_dishFlavor.data-v-0b00c929 {
+  position: absolute;
+  left: 0;
+  top: 40rpx;
+}
+.home_content .pop_mask .dish_detail_pop.data-v-0b00c929 {
+  width: calc(100vw - 160rpx);
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  padding: 40rpx;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+  border-radius: 20rpx;
+}
+.home_content .pop_mask .dish_detail_pop .div_big_image.data-v-0b00c929 {
+  width: 100%;
+  height: 320rpx;
+  border-radius: 10rpx;
+}
+.home_content .pop_mask .dish_detail_pop .title.data-v-0b00c929 {
+  font-size: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.home_content .pop_mask .dish_detail_pop .dish_items.data-v-0b00c929 {
+  height: 60vh;
+}
+.home_content .pop_mask .dish_detail_pop .but_item.data-v-0b00c929 {
+  display: flex;
+  position: relative;
+  flex: 1;
+}
+.home_content .pop_mask .dish_detail_pop .but_item .price.data-v-0b00c929 {
+  text-align: left;
+  color: #e94e3c;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 48rpx;
+  font-weight: bold;
+}
+.home_content .pop_mask .dish_detail_pop .but_item .price .ico.data-v-0b00c929 {
+  font-size: 28rpx;
+}
+.home_content .pop_mask .dish_detail_pop .but_item .active.data-v-0b00c929 {
+  position: absolute;
+  right: 0rpx;
+  bottom: 20rpx;
+  display: flex;
+}
+.home_content .pop_mask .dish_detail_pop .but_item .active .dish_add.data-v-0b00c929,
+.home_content .pop_mask .dish_detail_pop .but_item .active .dish_red.data-v-0b00c929 {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+}
+.home_content .pop_mask .dish_detail_pop .but_item .active .dish_number.data-v-0b00c929 {
+  padding: 0 10rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+}
+.home_content .pop_mask .dish_detail_pop .but_item .active .dish_card_add.data-v-0b00c929 {
+  width: 200rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-weight: 500;
+  font-size: 28rpx;
+  opacity: 1;
+  background: #ffc200;
+  border-radius: 30rpx;
+}
+.home_content .pop_mask .more_norm_pop.data-v-0b00c929 {
+  width: calc(100vw - 160rpx);
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  padding: 40rpx;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  background: #fff;
+  border-radius: 20rpx;
+}
+.home_content .pop_mask .more_norm_pop .div_big_image.data-v-0b00c929 {
+  width: 100%;
+  border-radius: 10rpx;
+}
+.home_content .pop_mask .more_norm_pop .title.data-v-0b00c929 {
+  font-size: 40rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-weight: bold;
+}
+.home_content .pop_mask .more_norm_pop .items_cont.data-v-0b00c929 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -14rpx;
+  max-height: 50vh;
+}
+.home_content .pop_mask .more_norm_pop .items_cont .item_row .flavor_name.data-v-0b00c929 {
+  height: 40rpx;
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #666666;
+  line-height: 40rpx;
+  padding-left: 10rpx;
+  padding-top: 20rpx;
+}
+.home_content .pop_mask .more_norm_pop .items_cont .item_row .flavor_item.data-v-0b00c929 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.home_content .pop_mask .more_norm_pop .items_cont .item_row .flavor_item .item.data-v-0b00c929 {
+  border: 1px solid #ffb302;
+  border-radius: 12rpx;
+  margin: 20rpx 10rpx;
+  padding: 0 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 400;
+  color: #333333;
+}
+.home_content .pop_mask .more_norm_pop .items_cont .item_row .flavor_item .act.data-v-0b00c929 {
+  background: #ffc200;
+  border: 1px solid #ffc200;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+}
+.home_content .pop_mask .more_norm_pop .but_item.data-v-0b00c929 {
+  display: flex;
+  position: relative;
+  flex: 1;
+  padding-left: 10rpx;
+  margin: 34rpx 0 -20rpx 0;
+}
+.home_content .pop_mask .more_norm_pop .but_item .price.data-v-0b00c929 {
+  text-align: left;
+  color: #e94e3c;
+  line-height: 88rpx;
+  box-sizing: border-box;
+  font-size: 48rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+}
+.home_content .pop_mask .more_norm_pop .but_item .price .ico.data-v-0b00c929 {
+  font-size: 28rpx;
+}
+.home_content .pop_mask .more_norm_pop .but_item .active.data-v-0b00c929 {
+  position: absolute;
+  right: 0rpx;
+  bottom: 20rpx;
+  display: flex;
+}
+.home_content .pop_mask .more_norm_pop .but_item .active .dish_add.data-v-0b00c929,
+.home_content .pop_mask .more_norm_pop .but_item .active .dish_red.data-v-0b00c929 {
+  display: block;
+  width: 72rpx;
+  height: 72rpx;
+}
+.home_content .pop_mask .more_norm_pop .but_item .active .dish_number.data-v-0b00c929 {
+  padding: 0 10rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  font-family: PingFangSC, PingFangSC-Medium;
+  font-weight: 500;
+}
+.home_content .pop_mask .more_norm_pop .but_item .active .dish_card_add.data-v-0b00c929 {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-weight: 500;
+  font-size: 28rpx;
+  opacity: 1;
+  background: #ffc200;
+  border-radius: 30rpx;
+}
+.home_content .pop_mask .lodding.data-v-0b00c929 {
+  position: relative;
+  top: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home_content .pop_mask .lodding .lodding_ico.data-v-0b00c929 {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 100%;
+}
+.home_content .pop_mask .close.data-v-0b00c929 {
+  position: absolute;
+  bottom: -180rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.home_content .pop_mask .close .close_img.data-v-0b00c929 {
+  width: 88rpx;
+  height: 88rpx;
+}
+.home_content .mask-box.data-v-0b00c929 {
+  position: absolute;
+  height: 136rpx;
+  width: 100%;
+  bottom: 0;
+  background-color: #f6f6f6;
+  opacity: 0.5;
+}
+.businessStatus.data-v-0b00c929 {
+  display: inline-block;
+  width: 92rpx;
+  height: 36rpx;
+  background: #1dc779;
+  border-radius: 8rpx;
+  color: #fff;
+  vertical-align: text-top;
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+.businessStatus.close.data-v-0b00c929 {
+  background: #999;
+}
+.class-item.data-v-0b00c929 {
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  padding: 16rpx;
+  border-radius: 8rpx;
+}
+.class-item.data-v-0b00c929:last-child {
+  min-height: 100vh;
+}
+

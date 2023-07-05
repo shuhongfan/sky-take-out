@@ -1,0 +1,159 @@
+// 登录页面-定制样式
+.login-ruiji {
+  .el-form-item {
+    // border: none;
+    // border-bottom: 1px solid #ccc;
+    border: 1px solid red;
+  }
+
+  .add-distance {
+    margin-top: 68px;
+  }
+}
+
+// .dashboard-container {
+//   height: 100%;
+
+//   .container {
+//     height: 100%;
+//   }
+// }
+.el-radio {
+  .el-radio__label {
+    color: #333;
+  }
+}
+
+//统一修改单选按钮样式
+.el-radio__inner::after {
+  background-color: #333;
+}
+
+//统一修改表单label的样式
+.el-form-item__label {
+  color: #333;
+}
+
+.el-input__inner {
+  border-color: #E5E4E4;
+}
+
+//统一修改输入框提示文字的样式
+.el-input__inner::-webkit-input-placeholder,
+.el-input__inner::-moz-placeholder,
+.el-input__inner::-ms-input-placeholder {
+  color: #BDBDBD;
+}
+
+//el-image相关样式设置
+.dashboard-container {
+  margin: 0 !important;
+  padding: 20px !important;
+
+  .el-table .cell {
+    .el-image>img {
+      width: 40px;
+      border-radius: 5px;
+    }
+  }
+}
+
+//分页样式设置
+.el-pagination {
+  .el-pagination__total {
+    font-size: 14px;
+    font-family: PingFangSC, PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  .el-pagination__sizes {
+    .el-input__inner {
+      font-size: 14px;
+      font-family: Helvetica;
+      text-align: left;
+      color: #333333;
+    }
+  }
+
+  .el-pager {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400 !important;
+  }
+
+  .el-pagination__jump {
+    font-size: 14px;
+    font-family: PingFangSC, PingFangSC-Regular;
+    font-weight: 400;
+    color: #333333;
+
+    .el-pagination__editor.el-input {
+      font-family: Helvetica;
+    }
+  }
+}
+
+//弹框关闭按钮颜色
+.el-icon-circle-close {
+  color: white;
+}
+
+//表格编辑列内容样式修正
+.dashboard-container .container .el-table tbody tr td .cell button span {
+  padding: 0 10px;
+}
+
+.dashboard-container .container .el-table tbody tr td .cell button:first-child span {
+  padding-left: 10px;
+}
+
+//按钮的背景色设置
+.el-button--primary {
+  color: #333333;
+  background: #FFC200;
+  border-color: #FFC200;
+}
+
+.el-button--primary:hover {
+  background: #fdd24c;
+  border-color: #fdd24c;
+  color: #333333;
+}
+
+.el-button--primary:active {
+  background: #efb602;
+  border-color: #efb602;
+  color: #333333;
+}
+
+.el-button--text {
+  font-weight: 400 !important;
+  font-size: 13px !important;
+}
+
+.el-table td {
+  font-size: 13px !important;
+}
+
+.el-table .cell,
+.el-table th div,
+.el-table--border td:first-child .cell,
+.el-table--border th:first-child .cell {
+  padding-left: 30px !important;
+  padding-right: 0 !important;
+}
+
+.el-table-column--selection .cell {
+  padding-left: 12px !important;
+  padding-right: 0 !important;
+  text-overflow: clip !important;
+}
+
+.el-table-column--selection .cell .el-checkbox__inner {
+  width: 13px;
+}
+
+.dashboard-container .container .el-table tbody tr td .cell button span {
+  // padding: 0 10px;
+}

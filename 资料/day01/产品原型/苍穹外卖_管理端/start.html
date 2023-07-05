@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Untitled Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link type="text/css" href="resources/css/reset.css" rel="Stylesheet">
+    <link type="text/css" href="resources/css/default.css" rel="Stylesheet">
+    <link rel="shortcut icon" href="resources/images/favicon_play.ico">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+
+    <script type="text/javascript">
+        if (location.href.toString().indexOf('file://localhost/') == 0) {
+            location.href = location.href.toString().replace('file://localhost/', 'file:///');
+        }
+    </script>
+
+    <!--<link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
+    <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
+    <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
+    <link type="text/css" rel="Stylesheet" href="plugins/handoff/styles/handoff.css" />
+    <link type="text/css" rel="Stylesheet" href="plugins/handoff/styles/codemirror.css" />-->
+
+                    <script id="axure_preview">
+                        ;(function(){
+                            console.log('axure_preview init')
+                            if(location.hostname !== "127.0.0.1" && location.hostname !== "localhost"){
+                                return 
+                            }
+                            if(window.top !== window){
+                                return
+                            }
+                            if(window.history && history.replaceState){
+                                if(!location.hash){
+                                    history.replaceState(null,null,'#lh=1')
+                                    lh_preview()
+                                }else if(location.hash.indexOf('lh=') === -1){
+                                    history.replaceState(null,null,location.hash+'&lh=1')
+                                    lh_preview()
+                                }
+                            }
+
+                            function lh_preview(port,stamp){
+                                port = port || location.port
+                                stamp = stamp || 0
+                                location.href = location.href
+                                if(window.$ && $.get){
+                                    console.log("lh_preview")
+                                    $.get("http://localhost:32764/preview?port="+port)
+                                }else if(stamp<3000){
+                                    console.log("lh_preview setTimeout ",stamp)
+                                    setTimeout(function(){
+                                        lh_preview(port,stamp+300)
+                                    },300)
+                                }else{
+                                    console.log("lh_preview fail")
+                                }
+                            }
+                        })();
+                    </script>
+                </head>
+<body scroll="no" class="hashover" style="overflow: hidden;">
+    <div id="topPanel">
+        <div id="interfaceControlFrame">
+            <div id="interfaceControlFrameLeft">
+                <div id="interfaceControlFrameMinimizeContainer">
+                    <a title="Collapse" id="interfaceControlFrameMinimizeButton">
+                        <div id="minimizeArrow" class="minimizeButtonHover minimizeIcon"></div>
+                        <div id="minimizeX" class="minimizeButton minimizeIcon"></div>
+                    </a>
+                </div>
+                <div id="interfaceControlFrameCloseContainer">
+                    <a title="Close" id="interfaceControlFrameCloseButton">CLOSE</a>
+                </div>
+
+                <div id="sitemapControlFrameContainer" title="Project Pages">
+                    <div id="projectControlFrameHeaderContainer">
+                        <ul id="projectControlFrameHeader"></ul>
+                    </div>
+                    
+                    <div id="interfacePageNameContainer">
+                        <div id="interfacePageNameButton" class="pageNameHeader">
+                            &#xA0;
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="interfaceAdaptiveViewsContainer" title="Adaptive Views">
+                    <div id="interfaceAdaptiveViewsIconButton">&#xA0;</div>
+                    <div id="interfaceAdaptiveViewsButton" class="adaptiveViewHeader">
+                        &#xA0;
+                    </div>
+                    <div id="adaptiveViewsDropdown" class="caret"></div>
+                </div>
+            </div>
+            
+            <div id="interfaceControlFrameContainer">
+                <div id="handoffControlFrameHeaderContainer">
+                    <ul id="handoffControlFrameHeader"></ul>
+                </div>
+                <div id="interfaceControlFrameLogoContainer">
+                    <div id="previewNotice">
+                        Local Preview
+                    </div>
+                </div>
+            </div>
+
+            <div id="interfaceControlFrameRight">
+                <div id="publishContainer">
+                    <a id="publishButton">Share Prototype</a>
+                </div>
+                
+                <div id="inspectControlFrameHeaderContainer">
+                    <ul id="inspectControlFrameHeader">
+                        <li id="overflowBtn">
+                            <a id="overflowMenuButton" title="View Options"></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="separatorContainer">
+                    <div class="separator"></div>
+                </div>
+
+                <div id="overflowMadeWith"><a href="https://www.axure.com" id="axureLogo" target="_blank"></a></div>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="popupContainer">
+        <div id="interfaceAdaptiveViewsListContainer">
+        </div>
+
+        <div id="interfaceScaleListContainer">
+        </div>
+
+        <div id="accountLoginContainer">
+        </div>
+
+        <div id="overflowMenuContainer">
+        </div>
+    </div>
+    <div id="outerContainer">
+        <div id="clippingBounds">
+            <div id="clippingBoundsScrollContainer"></div>
+        </div>
+
+        <div id="mHideSidebar"></div>
+        <div id="lsplitbar" class="splitbar"></div>
+
+        <div id="mainPanel">
+            <div id="mainPanelContainer" style="position: relative; width:100%; height: 100%;">
+                <div id="clipFrameScroll" style="position: relative; width:100%; height: 100%; background-color: #ffffff;">
+                    <iframe id="mainFrame" name="mainFrame" width="100%" height="100%" src="about:blank" frameborder="0" style="display: block;position:absolute;" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="rsplitbar" class="splitbar"></div>
+
+    </div>
+
+    <div id="maximizePanelContainer" class="maximizePanelContainer">
+        <div id="maximizePanelOver">
+            <div id="maximizePanel" title="Expand" class="maximizePanelOver">
+                <div id="maximizeButton" class="maximizeButton maximizeIcon"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobileControlFrameContainer"></div>
+
+<!-- 9.0.0.3669 -->
+<script src="resources/scripts/jquery-3.2.1.min.js"></script>
+<script src="resources/scripts/axure/jquery.nicescroll.min.js"></script>
+<script src="resources/scripts/axutils.js"></script>
+<script src="resources/scripts/messagecenter.js"></script>
+<script src="resources/scripts/player/axplayer.js"></script>
+<script src="resources/scripts/player/init.js"></script>
+
+
+</body>
+</html>

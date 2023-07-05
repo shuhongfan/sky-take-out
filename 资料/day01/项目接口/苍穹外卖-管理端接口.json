@@ -1,0 +1,2270 @@
+[
+  {
+    "index": 0,
+    "name": "分类相关接口",
+    "desc": "Category Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/category",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "分类相关接口"
+        ],
+        "_id": 323246,
+        "method": "PUT",
+        "title": "修改分类",
+        "path": "/admin/category",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b571353e1263907bf1feff",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类id\"},\"name\":{\"type\":\"string\",\"description\":\"分类名称\"},\"sort\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"分类类型\"}},\"title\":\"CategoryDTO\",\"$$ref\":\"#/definitions/CategoryDTO\",\"required\":[\"id\",\"name\",\"sort\",\"type\"]}",
+        "project_id": 10518,
+        "catid": 105908,
+        "uid": 12769,
+        "add_time": 1656056920,
+        "up_time": 1656058165,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/category/page",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "分类相关接口"
+        ],
+        "_id": 323252,
+        "method": "GET",
+        "title": "分类分页查询",
+        "path": "/admin/category/page",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "0",
+            "_id": "62b5734b3e12637221f1ff20",
+            "name": "name",
+            "example": "传统主食",
+            "desc": "分类名称"
+          },
+          {
+            "required": "1",
+            "_id": "62b5734b3e1263549af1ff1f",
+            "name": "page",
+            "example": "1",
+            "desc": "页码"
+          },
+          {
+            "required": "1",
+            "_id": "62b5734b3e1263289cf1ff1e",
+            "name": "pageSize",
+            "example": "10",
+            "desc": "每页记录数"
+          },
+          {
+            "required": "0",
+            "_id": "62b5734b3e12630237f1ff1d",
+            "name": "type",
+            "example": "1",
+            "desc": "分类类型：1为菜品分类，2为套餐分类"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"number\"},\"msg\":{\"type\":\"null\"},\"data\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"records\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"type\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"sort\":{\"type\":\"number\"},\"status\":{\"type\":\"number\"},\"createTime\":{\"type\":\"string\"},\"updateTime\":{\"type\":\"string\"},\"createUser\":{\"type\":\"number\"},\"updateUser\":{\"type\":\"number\"}},\"required\":[\"id\",\"type\",\"name\",\"sort\",\"status\",\"createTime\",\"updateTime\",\"createUser\",\"updateUser\"]}}},\"required\":[\"total\",\"records\"]}},\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105908,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656058699,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/category/status/{status}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "分类相关接口"
+        ],
+        "_id": 323254,
+        "method": "POST",
+        "title": "启用、禁用分类",
+        "path": "/admin/category/status/{status}",
+        "req_params": [
+          {
+            "_id": "62b577403e126381baf1ff68",
+            "name": "status",
+            "example": "1",
+            "desc": "1为启用，0为禁用"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b577403e126329e1f1ff6a",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b577403e1263dec6f1ff69",
+            "name": "id",
+            "example": "100",
+            "desc": "分类id"
+          }
+        ],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105908,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656059712,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/category",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "分类相关接口"
+        ],
+        "_id": 323244,
+        "method": "POST",
+        "title": "新增分类",
+        "path": "/admin/category",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b570fb3e1263f42df1fefe",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"name\":{\"type\":\"string\",\"description\":\"分类名称\"},\"sort\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"排序，按照升序排序\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"分类类型：1为菜品分类，2为套餐分类\"}},\"title\":\"CategoryDTO\",\"$$ref\":\"#/definitions/CategoryDTO\",\"required\":[\"name\",\"sort\",\"type\"]}",
+        "project_id": 10518,
+        "catid": 105908,
+        "uid": 12769,
+        "add_time": 1656056920,
+        "up_time": 1656058107,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/category",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "分类相关接口"
+        ],
+        "_id": 323248,
+        "method": "DELETE",
+        "title": "根据id删除分类",
+        "path": "/admin/category",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b571bb3e1263ab86f1ff06",
+            "name": "id",
+            "example": "100",
+            "desc": "分类id"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105908,
+        "uid": 12769,
+        "add_time": 1656056920,
+        "up_time": 1656058299,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/category/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "分类相关接口"
+        ],
+        "_id": 323250,
+        "method": "GET",
+        "title": "根据类型查询分类",
+        "path": "/admin/category/list",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "0",
+            "_id": "62b572323e12631e94f1ff0a",
+            "name": "type",
+            "example": "2",
+            "desc": "分类类型：1为菜品分类，2为套餐分类"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"name\":{\"type\":\"string\"},\"sort\":{\"type\":\"integer\",\"format\":\"int32\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\"},\"type\":{\"type\":\"integer\",\"format\":\"int32\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"Category\",\"$$ref\":\"#/definitions/Category\"}},\"msg\":{\"type\":\"string\"}},\"title\":\"R«List«Category»»\",\"$$ref\":\"#/definitions/R«List«Category»»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105908,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656058418,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "员工相关接口",
+    "desc": "Employee Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/employee/editPassword",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323276,
+        "method": "PUT",
+        "title": "修改密码",
+        "path": "/admin/employee/editPassword",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b575263e1263d67ef1ff41",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"empId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"员工id\"},\"newPassword\":{\"type\":\"string\",\"description\":\"新密码\"},\"oldPassword\":{\"type\":\"string\",\"description\":\"旧密码\"}},\"title\":\"PasswordEditDTO\",\"$$ref\":\"#/definitions/PasswordEditDTO\",\"required\":[\"empId\",\"newPassword\",\"oldPassword\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656059174,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee/status/{status}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323284,
+        "method": "POST",
+        "title": "启用、禁用员工账号",
+        "path": "/admin/employee/status/{status}",
+        "req_params": [
+          {
+            "_id": "62b5772b3e12638732f1ff63",
+            "name": "status",
+            "example": "1",
+            "desc": "状态，1为启用 0为禁用"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b5772b3e126300d3f1ff65",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b5772b3e1263e3faf1ff64",
+            "name": "id",
+            "desc": "员工id"
+          }
+        ],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656059691,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee/page",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323282,
+        "method": "GET",
+        "title": "员工分页查询",
+        "path": "/admin/employee/page",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "0",
+            "_id": "62b576b23e1263e7d0f1ff5d",
+            "name": "name",
+            "example": "张三",
+            "desc": "员工姓名"
+          },
+          {
+            "required": "1",
+            "_id": "62b576b23e126333dcf1ff5c",
+            "name": "page",
+            "example": "1",
+            "desc": "页码"
+          },
+          {
+            "required": "1",
+            "_id": "62b576b23e12637ea6f1ff5b",
+            "name": "pageSize",
+            "example": "10",
+            "desc": "每页记录数"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"number\"},\"msg\":{\"type\":\"null\"},\"data\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"records\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"username\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"password\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"sex\":{\"type\":\"string\"},\"idNumber\":{\"type\":\"string\"},\"status\":{\"type\":\"number\"},\"createTime\":{\"type\":[\"string\",\"null\"]},\"updateTime\":{\"type\":\"string\"},\"createUser\":{\"type\":[\"number\",\"null\"]},\"updateUser\":{\"type\":\"number\"}},\"required\":[\"id\",\"username\",\"name\",\"password\",\"phone\",\"sex\",\"idNumber\",\"status\",\"createTime\",\"updateTime\",\"createUser\",\"updateUser\"]}}},\"required\":[\"total\",\"records\"]}},\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656059570,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee/login",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323278,
+        "method": "POST",
+        "title": "员工登录",
+        "path": "/admin/employee/login",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b575523e1263d4b8f1ff48",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"主键值\"},\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"token\":{\"type\":\"string\",\"description\":\"jwt令牌\"},\"userName\":{\"type\":\"string\",\"description\":\"用户名\"}},\"title\":\"EmployeeLoginVO\",\"description\":\"员工登录返回的数据格式\",\"$$ref\":\"#/definitions/EmployeeLoginVO\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«EmployeeLoginVO»\",\"$$ref\":\"#/definitions/R«EmployeeLoginVO»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"password\":{\"type\":\"string\",\"description\":\"密码\"},\"username\":{\"type\":\"string\",\"description\":\"用户名\"}},\"title\":\"EmployeeLoginDTO\",\"description\":\"员工登录时传递的数据模型\",\"$$ref\":\"#/definitions/EmployeeLoginDTO\",\"required\":[\"password\",\"username\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656059218,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323272,
+        "method": "POST",
+        "title": "新增员工",
+        "path": "/admin/employee",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b574b33e12632a54f1ff39",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"员工id\"},\"idNumber\":{\"type\":\"string\",\"description\":\"身份证\"},\"name\":{\"type\":\"string\",\"description\":\"姓名\"},\"phone\":{\"type\":\"string\",\"description\":\"手机号\"},\"sex\":{\"type\":\"string\",\"description\":\"性别\"},\"username\":{\"type\":\"string\",\"description\":\"用户名\"}},\"title\":\"EmployeeDTO\",\"$$ref\":\"#/definitions/EmployeeDTO\",\"required\":[\"idNumber\",\"name\",\"phone\",\"sex\",\"username\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656059059,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323290,
+        "method": "GET",
+        "title": "根据id查询员工",
+        "path": "/admin/employee/{id}",
+        "req_params": [
+          {
+            "_id": "62b577843e1263c081f1ff75",
+            "name": "id",
+            "example": "100",
+            "desc": "员工id"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"idNumber\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"password\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"sex\":{\"type\":\"string\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"username\":{\"type\":\"string\"}},\"title\":\"Employee\",\"$$ref\":\"#/definitions/Employee\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«Employee»\",\"$$ref\":\"#/definitions/R«Employee»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656059780,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323274,
+        "method": "PUT",
+        "title": "编辑员工信息",
+        "path": "/admin/employee",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b574e53e126323b1f1ff3e",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"idNumber\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"sex\":{\"type\":\"string\"},\"username\":{\"type\":\"string\"}},\"title\":\"EmployeeDTO\",\"$$ref\":\"#/definitions/EmployeeDTO\",\"required\":[\"id\",\"idNumber\",\"name\",\"phone\",\"sex\",\"username\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656059109,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/employee/logout",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "员工相关接口"
+        ],
+        "_id": 323280,
+        "method": "POST",
+        "title": "退出登录",
+        "path": "/admin/employee/logout",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b56cab3e1263164ef1fe63",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105911,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656057003,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": "{\"type\":\"object\",\"title\":\"empty object\",\"properties\":{}}"
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "套餐相关接口",
+    "desc": "Setmeal Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/setmeal",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "套餐相关接口"
+        ],
+        "_id": 323320,
+        "method": "PUT",
+        "title": "修改套餐",
+        "path": "/admin/setmeal",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbe10a3e1263f338f24c58",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\",\"data\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类id\"},\"description\":{\"type\":\"string\",\"description\":\"套餐描述\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"套餐id\"},\"image\":{\"type\":\"string\",\"description\":\"套餐图片路径\"},\"name\":{\"type\":\"string\",\"description\":\"套餐名称\"},\"price\":{\"type\":\"number\",\"description\":\"套餐价格\"},\"setmealDishes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"copies\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"菜品份数\"},\"dishId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"菜品id\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"关系表主键值\"},\"name\":{\"type\":\"string\",\"description\":\"菜品名称\"},\"price\":{\"type\":\"number\",\"description\":\"菜品价格\"},\"setmealId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"套餐id\"}},\"title\":\"SetmealDish\",\"$$ref\":\"#/definitions/SetmealDish\",\"required\":[\"copies\",\"dishId\",\"name\",\"price\"]},\"description\":\"套餐和菜品关联关系\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"套餐起售状态\"}},\"title\":\"SetmealDTO\",\"$$ref\":\"#/definitions/SetmealDTO\",\"required\":[\"categoryId\",\"id\",\"image\",\"name\",\"price\",\"setmealDishes\"]}",
+        "project_id": 10518,
+        "catid": 105914,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656480010,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/setmeal/page",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "套餐相关接口"
+        ],
+        "_id": 323324,
+        "method": "GET",
+        "title": "分页查询",
+        "path": "/admin/setmeal/page",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "0",
+            "_id": "62bbe2513e12633587f24c72",
+            "name": "categoryId",
+            "desc": "分类id"
+          },
+          {
+            "required": "0",
+            "_id": "62bbe2513e1263a0cef24c71",
+            "name": "name",
+            "desc": "套餐名称"
+          },
+          {
+            "required": "1",
+            "_id": "62bbe2513e12633fa5f24c70",
+            "name": "page",
+            "desc": "页码"
+          },
+          {
+            "required": "1",
+            "_id": "62bbe2513e12636036f24c6f",
+            "name": "pageSize",
+            "desc": "每页记录数"
+          },
+          {
+            "required": "0",
+            "_id": "62bbe2513e126374aef24c6e",
+            "name": "status",
+            "desc": "套餐起售状态"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"number\"},\"msg\":{\"type\":\"null\"},\"data\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"records\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"categoryId\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"price\":{\"type\":\"number\"},\"status\":{\"type\":\"number\"},\"description\":{\"type\":\"string\"},\"image\":{\"type\":\"string\"},\"updateTime\":{\"type\":\"string\"},\"categoryName\":{\"type\":\"string\"}},\"required\":[\"id\",\"categoryId\",\"name\",\"price\",\"status\",\"description\",\"image\",\"updateTime\",\"categoryName\"]}}}}},\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105914,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656480337,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/setmeal/status/{status}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "套餐相关接口"
+        ],
+        "_id": 323326,
+        "method": "POST",
+        "title": "套餐起售、停售",
+        "path": "/admin/setmeal/status/{status}",
+        "req_params": [
+          {
+            "_id": "62bbe4263e12638465f24db9",
+            "name": "status",
+            "example": "1",
+            "desc": "套餐状态，1表示起售，0表示停售"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbe4263e12630d71f24dbb",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62bbe4263e126358d6f24dba",
+            "name": "id",
+            "example": "101",
+            "desc": "套餐id"
+          }
+        ],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105914,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656480806,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/setmeal",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": false,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "套餐相关接口"
+        ],
+        "_id": 323322,
+        "method": "DELETE",
+        "title": "批量删除套餐",
+        "path": "/admin/setmeal",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b56c5b3e1263583ff1fe53",
+            "name": "ids",
+            "desc": "ids"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"code\": {\n      \"type\": \"integer\",\n      \"format\": \"int32\"\n    },\n    \"data\": {\n      \"type\": \"object\"\n    },\n    \"msg\": {\n      \"type\": \"string\"\n    }\n  },\n  \"title\": \"R\",\n  \"$$ref\": \"#/definitions/R\"\n}",
+        "project_id": 10518,
+        "catid": 105914,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656056923,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/admin/setmeal",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "套餐相关接口"
+        ],
+        "_id": 323318,
+        "method": "POST",
+        "title": "新增套餐",
+        "path": "/admin/setmeal",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62b579263e12635d4af1ff86",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类id\"},\"description\":{\"type\":\"string\",\"description\":\"套餐描述\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"套餐id\"},\"image\":{\"type\":\"string\",\"description\":\"套餐图片\"},\"name\":{\"type\":\"string\",\"description\":\"套餐名称\"},\"price\":{\"type\":\"number\",\"description\":\"套餐价格\"},\"setmealDishes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"copies\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"份数\"},\"dishId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"菜品id\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"套餐和菜品关系id\"},\"name\":{\"type\":\"string\",\"description\":\"菜品名称\"},\"price\":{\"type\":\"number\",\"description\":\"菜品价格\"},\"setmealId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"套餐id\"}},\"title\":\"SetmealDish\",\"$$ref\":\"#/definitions/SetmealDish\",\"required\":[\"copies\",\"dishId\",\"name\",\"price\",\"setmealId\"]},\"description\":\"套餐包含的菜品\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"套餐状态：1位起售 0为停售\"}},\"title\":\"SetmealDTO\",\"$$ref\":\"#/definitions/SetmealDTO\",\"required\":[\"categoryId\",\"image\",\"name\",\"price\",\"setmealDishes\",\"status\"]}",
+        "project_id": 10518,
+        "catid": 105914,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656060198,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/setmeal/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "套餐相关接口"
+        ],
+        "_id": 323328,
+        "method": "GET",
+        "title": "根据id查询套餐",
+        "path": "/admin/setmeal/{id}",
+        "req_params": [
+          {
+            "_id": "62bbe5503e126344b4f24dc0",
+            "name": "id",
+            "example": "101",
+            "desc": "套餐id"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\"},\"categoryName\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"image\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"price\":{\"type\":\"number\"},\"setmealDishes\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"copies\":{\"type\":\"integer\",\"format\":\"int32\"},\"dishId\":{\"type\":\"integer\",\"format\":\"int64\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"name\":{\"type\":\"string\"},\"price\":{\"type\":\"number\"},\"setmealId\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"SetmealDish\",\"$$ref\":\"#/definitions/SetmealDish\",\"required\":[\"copies\",\"dishId\",\"id\",\"name\",\"price\",\"setmealId\"]}},\"status\":{\"type\":\"integer\",\"format\":\"int32\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"}},\"title\":\"SetmealVO\",\"$$ref\":\"#/definitions/SetmealVO\",\"required\":[\"categoryId\",\"categoryName\",\"description\",\"id\",\"image\",\"name\",\"price\",\"setmealDishes\",\"status\",\"updateTime\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«SetmealVO»\",\"$$ref\":\"#/definitions/R«SetmealVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105914,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656481104,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "工作台接口",
+    "desc": "Work Space Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/workspace/businessData",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "工作台接口"
+        ],
+        "_id": 323334,
+        "method": "GET",
+        "title": "查询今日运营数据",
+        "path": "/admin/workspace/businessData",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"newUsers\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"新增用户数\"},\"orderCompletionRate\":{\"type\":\"number\",\"format\":\"double\",\"description\":\"订单完成率\"},\"turnover\":{\"type\":\"number\",\"format\":\"double\",\"description\":\"营业额\"},\"unitPrice\":{\"type\":\"number\",\"format\":\"double\",\"description\":\"平均客单价\"},\"validOrderCount\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"有效订单数\"}},\"title\":\"BusinessDataVO\",\"$$ref\":\"#/definitions/BusinessDataVO\",\"required\":[\"newUsers\",\"orderCompletionRate\",\"turnover\",\"unitPrice\",\"validOrderCount\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«BusinessDataVO»\",\"$$ref\":\"#/definitions/R«BusinessDataVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105917,
+        "uid": 12769,
+        "add_time": 1656056924,
+        "up_time": 1656481219,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/workspace/overviewSetmeals",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "工作台接口"
+        ],
+        "_id": 323340,
+        "method": "GET",
+        "title": "查询套餐总览",
+        "path": "/admin/workspace/overviewSetmeals",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"discontinued\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"已停售套餐数量\"},\"sold\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"已启售套餐数量\"}},\"title\":\"SetmealOverViewVO\",\"$$ref\":\"#/definitions/SetmealOverViewVO\",\"required\":[\"discontinued\",\"sold\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«SetmealOverViewVO»\",\"$$ref\":\"#/definitions/R«SetmealOverViewVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105917,
+        "uid": 12769,
+        "add_time": 1656056924,
+        "up_time": 1656481429,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/workspace/overviewDishes",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "工作台接口"
+        ],
+        "_id": 323336,
+        "method": "GET",
+        "title": "查询菜品总览",
+        "path": "/admin/workspace/overviewDishes",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"discontinued\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"已停售菜品数量\"},\"sold\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"已启售菜品数量\"}},\"title\":\"DishOverViewVO\",\"$$ref\":\"#/definitions/DishOverViewVO\",\"required\":[\"discontinued\",\"sold\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«DishOverViewVO»\",\"$$ref\":\"#/definitions/R«DishOverViewVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105917,
+        "uid": 12769,
+        "add_time": 1656056924,
+        "up_time": 1656481300,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/workspace/overviewOrders",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "工作台接口"
+        ],
+        "_id": 323338,
+        "method": "GET",
+        "title": "查询订单管理数据",
+        "path": "/admin/workspace/overviewOrders",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"allOrders\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"全部订单\"},\"cancelledOrders\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"已取消数量\"},\"completedOrders\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"已完成数量\"},\"deliveredOrders\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"待派送数量\"},\"waitingOrders\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"待接单数量\"}},\"title\":\"OrderOverViewVO\",\"$$ref\":\"#/definitions/OrderOverViewVO\",\"required\":[\"allOrders\",\"cancelledOrders\",\"completedOrders\",\"deliveredOrders\",\"waitingOrders\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«OrderOverViewVO»\",\"$$ref\":\"#/definitions/R«OrderOverViewVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105917,
+        "uid": 12769,
+        "add_time": 1656056924,
+        "up_time": 1656481379,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "店铺操作接口",
+    "desc": "Shop Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/shop/status",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "店铺操作接口"
+        ],
+        "_id": 323330,
+        "method": "GET",
+        "title": "获取营业状态",
+        "path": "/admin/shop/status",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"店铺营业状态：1为营业，0为打烊\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«int»\",\"$$ref\":\"#/definitions/R«int»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105920,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656481512,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/shop/{status}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "店铺操作接口"
+        ],
+        "_id": 323332,
+        "method": "PUT",
+        "title": "设置营业状态",
+        "path": "/admin/shop/{status}",
+        "req_params": [
+          {
+            "_id": "62bbe7133e1263569df24dc3",
+            "name": "status",
+            "example": "1",
+            "desc": "店铺营业状态：1为营业，0为打烊"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbe7133e12631856f24dc4",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105920,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656481555,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "数据统计相关接口",
+    "desc": "Report Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/report/export",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": false,
+        "res_body_is_json_schema": false,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "数据统计相关接口"
+        ],
+        "_id": 323308,
+        "method": "GET",
+        "title": "导出Excel报表接口",
+        "path": "/admin/report/export",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "raw",
+        "res_body": "OK",
+        "project_id": 10518,
+        "catid": 105923,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656056923,
+        "__v": 0
+      },
+      {
+        "query_path": {
+          "path": "/admin/report/top10",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "数据统计相关接口"
+        ],
+        "_id": 323312,
+        "method": "GET",
+        "title": "查询销量排名top10接口",
+        "path": "/admin/report/top10",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b971423e126370e6f22f16",
+            "name": "begin",
+            "example": "2022-05-01",
+            "desc": "开始日期"
+          },
+          {
+            "required": "1",
+            "_id": "62b971423e1263f73af22f15",
+            "name": "end",
+            "example": "2022-05-31",
+            "desc": "结束日期"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"nameList\":{\"type\":\"string\",\"description\":\"商品名称列表，以逗号分隔\"},\"numberList\":{\"type\":\"string\",\"description\":\"销量列表，以逗号分隔\"}},\"title\":\"SalesTop10ReportVO\",\"$$ref\":\"#/definitions/SalesTop10ReportVO\",\"required\":[\"nameList\",\"numberList\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«SalesTop10ReportVO»\",\"$$ref\":\"#/definitions/R«SalesTop10ReportVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105923,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656320322,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/report/userStatistics",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "数据统计相关接口"
+        ],
+        "_id": 323316,
+        "method": "GET",
+        "title": "用户统计接口",
+        "path": "/admin/report/userStatistics",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b9646b3e12636be9f22f0a",
+            "name": "begin",
+            "example": "2022-05-01",
+            "desc": "开始日期"
+          },
+          {
+            "required": "1",
+            "_id": "62b9646b3e12633e52f22f09",
+            "name": "end",
+            "example": "2022-05-31",
+            "desc": "结束日期"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"dateList\":{\"type\":\"string\",\"description\":\"日期列表，以逗号分隔\"},\"newUserList\":{\"type\":\"string\",\"description\":\"新增用户数列表，以逗号分隔\"},\"totalUserList\":{\"type\":\"string\",\"description\":\"总用户量列表，以逗号分隔\"}},\"title\":\"UserReportVO\",\"$$ref\":\"#/definitions/UserReportVO\",\"required\":[\"dateList\",\"newUserList\",\"totalUserList\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«UserReportVO»\",\"$$ref\":\"#/definitions/R«UserReportVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105923,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656317035,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/report/turnoverStatistics",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "数据统计相关接口"
+        ],
+        "_id": 323314,
+        "method": "GET",
+        "title": "营业额统计接口",
+        "path": "/admin/report/turnoverStatistics",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b9518c3e1263b08ff22f06",
+            "name": "begin",
+            "example": "2022-05-01",
+            "desc": "开始日期"
+          },
+          {
+            "required": "1",
+            "_id": "62b9518c3e1263015bf22f05",
+            "name": "end",
+            "example": "2022-05-31",
+            "desc": "结束日期"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"dateList\":{\"type\":\"string\",\"description\":\"日期列表，日期之间以逗号分隔\"},\"turnoverList\":{\"type\":\"string\",\"description\":\"营业额列表，营业额之间以逗号分隔\"}},\"title\":\"TurnoverReportVO\",\"$$ref\":\"#/definitions/TurnoverReportVO\",\"required\":[\"dateList\",\"turnoverList\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«TurnoverReportVO»\",\"$$ref\":\"#/definitions/R«TurnoverReportVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105923,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656312204,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/report/ordersStatistics",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "数据统计相关接口"
+        ],
+        "_id": 323310,
+        "method": "GET",
+        "title": "订单统计接口",
+        "path": "/admin/report/ordersStatistics",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62b96be93e12633d4af22f12",
+            "name": "begin",
+            "example": "2022-05-01",
+            "desc": "开始日期"
+          },
+          {
+            "required": "1",
+            "_id": "62b96be93e1263febef22f11",
+            "name": "end",
+            "example": "2022-05-31",
+            "desc": "结束日期"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"dateList\":{\"type\":\"string\",\"description\":\"日期列表，以逗号分隔\"},\"orderCompletionRate\":{\"type\":\"number\",\"format\":\"double\",\"description\":\"订单完成率\"},\"orderCountList\":{\"type\":\"string\",\"description\":\"订单数列表，以逗号分隔\"},\"totalOrderCount\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"订单总数\"},\"validOrderCount\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"有效订单数\"},\"validOrderCountList\":{\"type\":\"string\",\"description\":\"有效订单数列表，以逗号分隔\"}},\"title\":\"OrderReportVO\",\"$$ref\":\"#/definitions/OrderReportVO\",\"required\":[\"dateList\",\"orderCompletionRate\",\"orderCountList\",\"totalOrderCount\",\"validOrderCount\",\"validOrderCountList\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«OrderReportVO»\",\"$$ref\":\"#/definitions/R«OrderReportVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105923,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656318953,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "菜品相关接口",
+    "desc": "Dish Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/dish",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323260,
+        "method": "PUT",
+        "title": "修改菜品",
+        "path": "/admin/dish",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbe9903e12632192f24dc9",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\"},\"description\":{\"type\":\"string\"},\"flavors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"dishId\":{\"type\":\"integer\",\"format\":\"int64\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"name\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"title\":\"DishFlavor\",\"$$ref\":\"#/definitions/DishFlavor\",\"required\":[\"name\",\"value\"]}},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"image\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"price\":{\"type\":\"number\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\"}},\"title\":\"DishDTO\",\"$$ref\":\"#/definitions/DishDTO\",\"required\":[\"categoryId\",\"id\",\"image\",\"name\",\"price\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656482192,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/dish",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323262,
+        "method": "DELETE",
+        "title": "批量删除菜品",
+        "path": "/admin/dish",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62bbea4d3e126367f2f24dcc",
+            "name": "ids",
+            "example": "1,2,3",
+            "desc": "菜品id，之间用逗号分隔"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656482381,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/dish",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323258,
+        "method": "POST",
+        "title": "新增菜品",
+        "path": "/admin/dish",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbe90b3e126345bbf24dc6",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"分类id\"},\"description\":{\"type\":\"string\",\"description\":\"菜品描述\"},\"flavors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"dishId\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"菜品id\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"口味id\"},\"name\":{\"type\":\"string\",\"description\":\"口味名称\"},\"value\":{\"type\":\"string\",\"description\":\"口味值\"}},\"title\":\"DishFlavor\",\"$$ref\":\"#/definitions/DishFlavor\",\"required\":[\"name\",\"value\"]},\"description\":\"口味\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"菜品id\"},\"image\":{\"type\":\"string\",\"description\":\"菜品图片路径\"},\"name\":{\"type\":\"string\",\"description\":\"菜品名称\"},\"price\":{\"type\":\"number\",\"description\":\"菜品价格\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"菜品状态：1为起售，0为停售\"}},\"title\":\"DishDTO\",\"$$ref\":\"#/definitions/DishDTO\",\"required\":[\"categoryId\",\"image\",\"name\",\"price\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656482059,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/dish/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323270,
+        "method": "GET",
+        "title": "根据id查询菜品",
+        "path": "/admin/dish/{id}",
+        "req_params": [
+          {
+            "_id": "62bbee1b3e12636721f24e12",
+            "name": "id",
+            "example": "101",
+            "desc": "菜品id"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\"},\"categoryName\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"flavors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"dishId\":{\"type\":\"integer\",\"format\":\"int64\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"name\":{\"type\":\"string\"},\"value\":{\"type\":\"string\"}},\"title\":\"DishFlavor\",\"$$ref\":\"#/definitions/DishFlavor\",\"required\":[\"dishId\",\"id\",\"name\",\"value\"]}},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"image\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"price\":{\"type\":\"number\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"}},\"title\":\"DishVO\",\"$$ref\":\"#/definitions/DishVO\",\"required\":[\"categoryId\",\"categoryName\",\"flavors\",\"description\",\"id\",\"image\",\"name\",\"price\",\"status\",\"updateTime\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«DishVO»\",\"$$ref\":\"#/definitions/R«DishVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656483355,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/dish/list",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323264,
+        "method": "GET",
+        "title": "根据分类id查询菜品",
+        "path": "/admin/dish/list",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62bbeaa23e126331ddf24dce",
+            "name": "categoryId",
+            "example": "101",
+            "desc": "分类id"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"categoryId\":{\"type\":\"integer\",\"format\":\"int64\"},\"createTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"createUser\":{\"type\":\"integer\",\"format\":\"int64\"},\"description\":{\"type\":\"string\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"image\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"price\":{\"type\":\"number\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\"},\"updateTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"updateUser\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"Dish\",\"$$ref\":\"#/definitions/Dish\"}},\"msg\":{\"type\":\"string\"}},\"title\":\"R«List«Dish»»\",\"$$ref\":\"#/definitions/R«List«Dish»»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656482466,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/dish/page",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323266,
+        "method": "GET",
+        "title": "菜品分页查询",
+        "path": "/admin/dish/page",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "0",
+            "_id": "62bbebff3e1263cea1f24e05",
+            "name": "categoryId",
+            "example": "101",
+            "desc": "分类id"
+          },
+          {
+            "required": "0",
+            "_id": "62bbebff3e12634db8f24e04",
+            "name": "name",
+            "example": "宫保鸡丁",
+            "desc": "菜品名称"
+          },
+          {
+            "required": "1",
+            "_id": "62bbebff3e12630b6cf24e03",
+            "name": "page",
+            "example": "1",
+            "desc": "页码"
+          },
+          {
+            "required": "1",
+            "_id": "62bbebff3e12634976f24e02",
+            "name": "pageSize",
+            "example": "10",
+            "desc": "每页记录数"
+          },
+          {
+            "required": "0",
+            "_id": "62bbebff3e1263b91ef24e01",
+            "name": "status",
+            "example": "1",
+            "desc": "分类状态"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"number\"},\"msg\":{\"type\":\"null\"},\"data\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\",\"description\":\"总记录数\"},\"records\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"categoryId\":{\"type\":\"number\"},\"price\":{\"type\":\"number\"},\"image\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"status\":{\"type\":\"number\"},\"updateTime\":{\"type\":\"string\"},\"categoryName\":{\"type\":\"string\",\"description\":\"分类名称\"}},\"required\":[\"id\",\"name\",\"categoryId\",\"price\",\"image\",\"description\",\"status\",\"updateTime\",\"categoryName\"]},\"description\":\"当前页数据\"}},\"required\":[\"total\",\"records\"]}},\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656482815,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/dish/status/{status}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "菜品相关接口"
+        ],
+        "_id": 323268,
+        "method": "POST",
+        "title": "菜品起售、停售",
+        "path": "/admin/dish/status/{status}",
+        "req_params": [
+          {
+            "_id": "62bbedc23e12631123f24e0c",
+            "name": "status",
+            "example": "1",
+            "desc": "菜品状态：1为起售，0为停售"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbedc23e12636a44f24e0e",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [
+          {
+            "required": "1",
+            "_id": "62bbedc23e12630a1af24e0d",
+            "name": "id",
+            "example": "101",
+            "desc": "菜品id"
+          }
+        ],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105926,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656483266,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "订单管理接口",
+    "desc": "Order Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/order/cancel",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323292,
+        "method": "PUT",
+        "title": "取消订单",
+        "path": "/admin/order/cancel",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbee683e12632147f24e13",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"cancelReason\":{\"type\":\"string\",\"description\":\"订单取消原因\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"订单id\"}},\"title\":\"OrdersCancelDTO\",\"$$ref\":\"#/definitions/OrdersCancelDTO\",\"required\":[\"cancelReason\",\"id\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656483432,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/statistics",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323306,
+        "method": "GET",
+        "title": "各个状态的订单数量统计",
+        "path": "/admin/order/statistics",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"confirmed\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"待派送数量\"},\"deliveryInProgress\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"派送中数量\"},\"toBeConfirmed\":{\"type\":\"integer\",\"format\":\"int32\",\"description\":\"待接单数量\"}},\"title\":\"OrderStatisticsVO\",\"$$ref\":\"#/definitions/OrderStatisticsVO\",\"required\":[\"confirmed\",\"deliveryInProgress\",\"toBeConfirmed\"]},\"msg\":{\"type\":\"string\"}},\"title\":\"R«OrderStatisticsVO»\",\"$$ref\":\"#/definitions/R«OrderStatisticsVO»\",\"required\":[\"code\",\"data\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656485725,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/complete/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323294,
+        "method": "PUT",
+        "title": "完成订单",
+        "path": "/admin/order/complete/{id}",
+        "req_params": [
+          {
+            "_id": "62bbeed93e12634a8cf24e1a",
+            "name": "id",
+            "example": "101",
+            "desc": "订单id"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbeed93e12636f71f24e1b",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656483545,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/rejection",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323304,
+        "method": "PUT",
+        "title": "拒单",
+        "path": "/admin/order/rejection",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbf7223e12638a98f24e60",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"订单id\"},\"rejectionReason\":{\"type\":\"string\",\"description\":\"拒单原因\"}},\"title\":\"OrdersRejectionDTO\",\"$$ref\":\"#/definitions/OrdersRejectionDTO\",\"required\":[\"id\",\"rejectionReason\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056923,
+        "up_time": 1656485666,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/confirm",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323298,
+        "method": "PUT",
+        "title": "接单",
+        "path": "/admin/order/confirm",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbf1a63e12630d14f24e51",
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "json",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "req_body_other": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"integer\",\"format\":\"int64\",\"description\":\"订单id\"}},\"title\":\"OrdersConfirmDTO\",\"$$ref\":\"#/definitions/OrdersConfirmDTO\",\"required\":[\"id\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656484262,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/details/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323302,
+        "method": "GET",
+        "title": "查询订单详情",
+        "path": "/admin/order/details/{id}",
+        "req_params": [
+          {
+            "_id": "62bbf2403e12639fc7f24e5e",
+            "name": "id",
+            "example": "101",
+            "desc": "订单id"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{\"address\":{\"type\":\"string\"},\"addressBookId\":{\"type\":\"integer\",\"format\":\"int64\"},\"amount\":{\"type\":\"number\"},\"cancelReason\":{\"type\":\"string\"},\"cancelTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"checkoutTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"consignee\":{\"type\":\"string\"},\"deliveryStatus\":{\"type\":\"integer\",\"format\":\"int32\"},\"deliveryTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"estimatedDeliveryTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"number\":{\"type\":\"string\"},\"orderDetailList\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"amount\":{\"type\":\"number\"},\"dishFlavor\":{\"type\":\"string\"},\"dishId\":{\"type\":\"integer\",\"format\":\"int64\"},\"id\":{\"type\":\"integer\",\"format\":\"int64\"},\"image\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"number\":{\"type\":\"integer\",\"format\":\"int32\"},\"orderId\":{\"type\":\"integer\",\"format\":\"int64\"},\"setmealId\":{\"type\":\"integer\",\"format\":\"int64\"}},\"title\":\"OrderDetail\",\"$$ref\":\"#/definitions/OrderDetail\"}},\"orderDishes\":{\"type\":\"string\"},\"orderTime\":{\"type\":\"string\",\"format\":\"date-time\"},\"packAmount\":{\"type\":\"integer\",\"format\":\"int32\"},\"payMethod\":{\"type\":\"integer\",\"format\":\"int32\"},\"payStatus\":{\"type\":\"integer\",\"format\":\"int32\"},\"phone\":{\"type\":\"string\"},\"rejectionReason\":{\"type\":\"string\"},\"remark\":{\"type\":\"string\"},\"status\":{\"type\":\"integer\",\"format\":\"int32\"},\"tablewareNumber\":{\"type\":\"integer\",\"format\":\"int32\"},\"tablewareStatus\":{\"type\":\"integer\",\"format\":\"int32\"},\"userId\":{\"type\":\"integer\",\"format\":\"int64\"},\"userName\":{\"type\":\"string\"}},\"title\":\"OrderVO\",\"$$ref\":\"#/definitions/OrderVO\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«OrderVO»\",\"$$ref\":\"#/definitions/R«OrderVO»\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656484416,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/delivery/{id}",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "var",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323300,
+        "method": "PUT",
+        "title": "派送订单",
+        "path": "/admin/order/delivery/{id}",
+        "req_params": [
+          {
+            "_id": "62bbf20a3e126313f0f24e5a",
+            "name": "id",
+            "example": "101",
+            "desc": "订单id"
+          }
+        ],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"object\",\"properties\":{}},\"msg\":{\"type\":\"string\"}},\"title\":\"R\",\"$$ref\":\"#/definitions/R\",\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656484362,
+        "__v": 0,
+        "desc": "",
+        "markdown": "",
+        "req_body_other": ""
+      },
+      {
+        "query_path": {
+          "path": "/admin/order/conditionSearch",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "订单管理接口"
+        ],
+        "_id": 323296,
+        "method": "GET",
+        "title": "订单搜索",
+        "path": "/admin/order/conditionSearch",
+        "req_params": [],
+        "req_body_form": [],
+        "req_headers": [],
+        "req_query": [
+          {
+            "required": "0",
+            "_id": "62bbf0ab3e12637d38f24e4c",
+            "name": "beginTime",
+            "desc": "beginTime"
+          },
+          {
+            "required": "0",
+            "_id": "62bbf0ab3e1263a82df24e4b",
+            "name": "endTime",
+            "desc": "endTime"
+          },
+          {
+            "required": "0",
+            "_id": "62bbf0ab3e126336a9f24e4a",
+            "name": "number",
+            "desc": "number"
+          },
+          {
+            "required": "1",
+            "_id": "62bbf0ab3e1263bd21f24e49",
+            "name": "page",
+            "desc": "page"
+          },
+          {
+            "required": "1",
+            "_id": "62bbf0ab3e12630652f24e48",
+            "name": "pageSize",
+            "desc": "pageSize"
+          },
+          {
+            "required": "0",
+            "_id": "62bbf0ab3e12632aa0f24e47",
+            "name": "phone",
+            "desc": "phone"
+          },
+          {
+            "required": "0",
+            "_id": "62bbf0ab3e1263b1c0f24e46",
+            "name": "status",
+            "desc": "status"
+          }
+        ],
+        "req_body_type": "raw",
+        "res_body_type": "json",
+        "res_body": "{\"$schema\":\"http://json-schema.org/draft-04/schema#\",\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"number\"},\"msg\":{\"type\":\"null\"},\"data\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"records\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"number\":{\"type\":\"string\"},\"status\":{\"type\":\"number\"},\"userId\":{\"type\":\"number\"},\"addressBookId\":{\"type\":\"number\"},\"orderTime\":{\"type\":\"string\"},\"checkoutTime\":{\"type\":[\"null\",\"string\"]},\"payMethod\":{\"type\":\"number\"},\"payStatus\":{\"type\":\"number\"},\"amount\":{\"type\":\"number\"},\"remark\":{\"type\":\"string\"},\"userName\":{\"type\":\"string\"},\"phone\":{\"type\":\"string\"},\"address\":{\"type\":\"string\"},\"consignee\":{\"type\":\"string\"},\"cancelReason\":{\"type\":\"string\"},\"rejectionReason\":{\"type\":\"string\"},\"cancelTime\":{\"type\":\"string\"},\"estimatedDeliveryTime\":{\"type\":\"string\"},\"deliveryStatus\":{\"type\":\"number\"},\"deliveryTime\":{\"type\":\"string\"},\"packAmount\":{\"type\":\"number\"},\"tablewareNumber\":{\"type\":\"number\"},\"tablewareStatus\":{\"type\":\"number\"},\"orderDishes\":{\"type\":\"string\",\"description\":\"订单包含的菜品，以字符串形式展示\"}},\"required\":[\"id\",\"number\",\"status\",\"userId\",\"addressBookId\",\"orderTime\",\"checkoutTime\",\"payMethod\",\"payStatus\",\"amount\",\"remark\",\"userName\",\"phone\",\"address\",\"consignee\",\"cancelReason\",\"rejectionReason\",\"cancelTime\",\"estimatedDeliveryTime\",\"deliveryStatus\",\"deliveryTime\",\"packAmount\",\"tablewareNumber\",\"tablewareStatus\",\"orderDishes\"]}}}}},\"required\":[\"code\"]}",
+        "project_id": 10518,
+        "catid": 105929,
+        "uid": 12769,
+        "add_time": 1656056922,
+        "up_time": 1656484011,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      }
+    ]
+  },
+  {
+    "index": 0,
+    "name": "通用接口",
+    "desc": "Common Controller",
+    "add_time": 1656056920,
+    "up_time": 1656056920,
+    "list": [
+      {
+        "query_path": {
+          "path": "/admin/common/upload",
+          "params": []
+        },
+        "edit_uid": 0,
+        "status": "undone",
+        "type": "static",
+        "req_body_is_json_schema": true,
+        "res_body_is_json_schema": true,
+        "api_opened": false,
+        "index": 0,
+        "tag": [
+          "通用接口"
+        ],
+        "_id": 323256,
+        "method": "POST",
+        "title": "文件上传",
+        "path": "/admin/common/upload",
+        "req_params": [],
+        "req_body_form": [
+          {
+            "required": "1",
+            "_id": "62bbf7be3e126357f1f24e63",
+            "name": "file",
+            "type": "file",
+            "desc": "文件"
+          }
+        ],
+        "req_headers": [
+          {
+            "required": "1",
+            "_id": "62bbf7be3e12631a74f24e62",
+            "name": "Content-Type",
+            "value": "multipart/form-data"
+          }
+        ],
+        "req_query": [],
+        "req_body_type": "form",
+        "res_body_type": "json",
+        "res_body": "{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"integer\",\"format\":\"int32\"},\"data\":{\"type\":\"string\",\"description\":\"文件上传路径\"},\"msg\":{\"type\":\"string\"}},\"title\":\"R«string»\",\"$$ref\":\"#/definitions/R«string»\",\"required\":[\"code\",\"data\"]}",
+        "req_body_other": "{\"type\":\"string\",\"format\":\"binary\"}",
+        "project_id": 10518,
+        "catid": 105932,
+        "uid": 12769,
+        "add_time": 1656056921,
+        "up_time": 1656485822,
+        "__v": 0,
+        "desc": "",
+        "markdown": ""
+      }
+    ]
+  }
+]

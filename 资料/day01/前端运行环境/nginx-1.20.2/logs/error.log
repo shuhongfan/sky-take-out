@@ -1,0 +1,3 @@
+2022/09/13 09:52:09 [emerg] 16120#18744: CreateFile() "E:\2022新版课程\苍穹外卖项目\授课资料\day01\资料\前端运行环境\nginx-1.20.2/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2022/09/19 14:13:10 [emerg] 6884#1840: CreateFile() "E:\2022新版课程\苍穹外卖项目\授课资料\day01\资料\前端运行环境\nginx-1.20.2/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2023/03/04 10:52:01 [emerg] 12092#12960: CreateFile() "E:\授课\北京JavaEE就业406期\苍穹外卖项目\资料\day01\前端运行环境\nginx-1.20.2/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)

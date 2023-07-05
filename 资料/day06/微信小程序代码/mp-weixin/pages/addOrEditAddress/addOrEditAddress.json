@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "新增收获地址",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#333333",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "uni-easyinput": "/node-modules/@dcloudio/uni-ui/lib/uni-easyinput/uni-easyinput",
+    "simple-address": "/pages/common/simple-address/simple-address"
+  }
+}

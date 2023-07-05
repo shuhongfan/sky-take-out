@@ -1,0 +1,45 @@
+####提示
+#1.以下脚本设置的是master分支被合并时执行（设置为平常用来发版本的分支即可）
+#2.版本自动化部署到nginx下
+#3.执行yml脚本的runner名字设置的vue-runner1,即对应tags
+
+stages: # Stages 表示构建阶段，这里有两个阶段 install, deploy
+- install
+- deploy
+
+cache:
+  key: ${CI_BUILD_REF_NAME}
+  paths:
+    - node_modules/
+    
+install-staging:dep: # Jobs 表示构建工作，表示某个 Stage 里面执行的工作。
+  stage: install
+  tags:
+    - reggie-vue-runner #与注册runner时填写的tags保持一致
+  only: # 定义了只有在被merge到了master分支上 才会执行部署脚本。
+  - master
+  script:
+  - echo "=====start install======"
+  - npm install --registry=https://registry.npm.taobao.org  #安装依赖
+  - echo "=====end install======"
+  artifacts:  # 将这个job生成的依赖传递给下一个job。需要设置dependencies
+    expire_in: 60 mins   # artifacets 的过期时间，因为这些数据都是直接保存在 Gitlab 机器上的，过于久远的资源就可以删除掉了
+    paths:  # 需要被传递给下一个job的目录。
+    - node_modules/
+    
+deploy-staging:dep:
+  stage: deploy
+  tags:
+    - reggie-vue-runner
+  only:
+  - master
+  script:
+  - echo "=====start build======"
+  - npm run build:uat  # 将项目打包 测试环境用npm run build:uat ---有删除权限 线上还是用npm run build ---没有删除权限
+  - echo "=====start deploy======"
+  - sudo cp -rf ./dist/  /usr/share/nginx/html/reggie
+  - echo "=====end deploy!!!!!!======"
+  
+
+
+  

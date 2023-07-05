@@ -1,0 +1,209 @@
+﻿#pageNotesHost {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#pageNotesHostBtn {
+    order: 2;
+}
+
+#pageNotesHostBtn a {
+    background: url('images/notes_panel_on.svg') no-repeat center center,linear-gradient(transparent, transparent);
+}
+
+#pageNotesHostBtn a.selected, #pageNotesHostBtn a.selected:hover {
+    background: url('images/notes_panel_off.svg') no-repeat center center,linear-gradient(transparent, transparent);
+}
+
+#pageNotesScrollContainer {
+    overflow: auto;
+    width: 100%;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}    
+
+#pageNotesContent {
+	overflow: visible;
+}
+
+.pageNoteContainer {
+    padding: 0px 12px 8px 12px;
+}
+
+.mobileMode .pageNoteContainer {
+    padding: 0px 16px 8px 17px;
+}
+
+.pageNoteName {
+    font-size: 13px;
+    font-weight: bold;
+    color: #2c2c2c;
+    margin: 15px 0px 5px 0px;
+    white-space: nowrap;
+}
+
+.pageNote {
+    font-size: 13px;
+    color: #2a2e38;
+    line-height: 1.67;
+    word-wrap: break-word;
+}
+
+.pageNote ul {
+    list-style: disc;
+    padding: 0px 0px 0px 40px;
+}
+
+.pageNote ul ul{
+    list-style: circle;
+}
+
+.pageNote ul ul ul{
+    list-style: square;
+}
+
+.pageNote ul ul ul ul {
+    list-style: disc;
+}
+
+.pageNote ul ul ul ul ul {
+    list-style: circle;
+}
+
+.pageNote ul ul ul ul ul ul {
+    list-style: square;
+}
+
+.widgetNoteContainer {
+    padding: 12px;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mobileMode .widgetNoteContainer {
+    padding: 12px 16px 12px 17px;
+}
+
+.widgetNoteContainerSelected {
+    background-color: white;
+    border-bottom: 1px solid #c2c2c2;
+    border-top: 1px solid #c2c2c2;
+}
+
+.widgetNoteFootnote {
+    display: inline-block;
+    padding-top: 1px;
+    background-color: #fff849;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    margin-right: 8px;
+    padding: 0px 5px;
+    color: #000;
+}
+
+div.annnoteline {
+    display: inline-block;
+    width: 9px;
+    height: 1px;
+    border-bottom: 1px solid white;
+    margin-top: 1px;
+}
+
+.widgetNoteLabel {
+    font-size: 13px;
+    font-weight: 600;
+    color: #58167d;
+    margin-top: 4px;
+    float: right;
+}
+
+.noteLink {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.noteLink:hover {
+    background-color: white;
+}
+
+.notesSectionHeader {
+    margin: 0px 8px 0px 12px;
+}
+
+.notesPageNameHeader {
+    margin: 8px 8px 15px 12px;
+}
+
+.mobileMode .notesPageNameHeader {
+    margin: 18px 14px 5px 16px;
+}
+
+#notesOverlay {
+    width: 0;
+    height: 0;
+    position: absolute;
+    overflow: visible;
+    z-index: 1;
+}
+
+div.closeNotesDialog {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 11px;
+    height: 10px;
+    object-fit: contain;
+    background: url(../../../resources/images/close_x.svg) no-repeat center center, linear-gradient(transparent, transparent);
+    margin-left: auto;
+    cursor: pointer;
+}
+
+div.resizeNotesDialog {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 11px;
+    height: 10px;
+    object-fit: contain;
+    background: url(../../../resources/images/resize.svg) no-repeat center center, linear-gradient(transparent, transparent);
+    margin-left: auto;
+    cursor: nwse-resize;
+}
+
+div.notesDialog {
+    position: absolute;
+    padding: 16px 3px 10px 3px;
+    background-color: #efefef;
+    width: 300px;
+    height: 300px;
+    line-height: normal;
+    border: #8F949A solid 1px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.4);
+    cursor: move;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+div.notesDialog.active {
+    user-select: none;
+}
+
+div.notesDialog .widgetNoteContainer {
+    cursor: auto;
+    padding: 2px 26px 16px 14px;
+}
+
+div.notesDialogScroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    cursor: auto;
+}
+
+.mobileMode .pageNoteName, .mobileMode #pageNotesToolbar, .mobileMode .dottedDivider {
+    display: none;
+}

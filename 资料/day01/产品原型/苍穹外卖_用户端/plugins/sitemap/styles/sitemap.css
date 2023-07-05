@@ -1,0 +1,380 @@
+﻿
+#sitemapHost {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#sitemapHostBtn a {
+    background: url('images/sitemap_panel_on.svg') no-repeat center center, linear-gradient(transparent, transparent);
+}
+
+#sitemapHostBtn a.selected, #sitemapHostBtn a.selected:hover {
+    background: url('images/sitemap_panel_off.svg') no-repeat center center, linear-gradient(transparent, transparent);
+}
+
+#sitemapHost .pageButtonHeader {
+    top: -27px;
+}
+
+#sitemapTreeContainer {
+    overflow: auto;
+    width: 100%;
+    flex: 1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobileMode #sitemapTreeContainer {
+    margin-left: 5px;
+    overflow-x: hidden;
+}
+
+.sitemapTree {
+    margin: 0px 0px 10px 0px;
+    overflow:visible;
+}
+
+.sitemapTree ul {
+    list-style-type: none;
+    margin: 0px 0px 0px 0px;
+    padding-left: 0px;
+}
+
+ul.sitemapTree {
+    display: inline-block;
+    min-width: 100%;
+}
+
+.pageSwapInstructions {
+    width: 129px;
+    font-size: 12px;
+    text-align: center;
+    color: #8c8c8c;
+    margin: 0 auto;
+    padding: 12px 0px;
+    line-height: 20px;
+}
+
+.sitemapMinus, .sitemapPlus {
+	vertical-align:middle;
+    background-repeat: no-repeat;
+	margin-right: 3px;	
+    width: 7px;
+    height: 8px;
+    object-fit: contain;
+    display:inline-block;
+}
+    .sitemapMinus {
+        margin-bottom: 0px;
+        background: url('images/open_item.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    }
+    .sitemapPlus {
+        margin-bottom: 2px;
+        background: url('images/closed_item.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    }
+
+.mobileMode .sitemapMinus, .mobileMode .sitemapPlus {
+    width: 10.5px;
+    height: 12px;
+    margin-right: 5px;	
+    background-size: contain;
+}
+
+.sitemapPageLink {
+    margin-left: 0px;
+}
+
+.sitemapPageIcon {
+	margin: 0px 6px -3px 3px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url('images/page_lt_grey.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+.mobileMode .sitemapPageIcon {
+    margin-right: 7px;	
+    background-size: contain;
+}
+
+.sitemapFolderIcon {
+    background: url('images/folder_closed_blue.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+.mobileMode .sitemapFolderIcon {
+    width: 18px;
+    height: 18px;
+    margin-left: 1px;
+    background-position-y: 1px;
+    background-size: contain;
+}
+
+.sitemapFolderOpenIcon {
+    background: url('images/folder_open.png') no-repeat center center;
+    background: url('images/folder_open.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+.sitemapPageName {
+    font-size: 14px;
+    line-height: 1.93;
+    color: #4a4a4a;
+}
+
+.sitemapPageName.mobileText {
+    line-height: 1.69;
+}
+
+.sitemapNode  {
+    white-space:nowrap;
+}
+
+.sitemapPageLinkContainer {
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.mobileMode .sitemapPageLinkContainer {
+    margin-bottom: 13px;
+}
+
+.sitemapHighlight {
+    background-color: #e6e6e6;
+}
+
+.sitemapGreyedName
+{
+	color: #AAA;
+}
+
+.sitemapPluginNameHeader {
+    margin: 13px 9px 5px 9px;
+    font-size: 14px;
+    color: #444444;
+}
+
+.sitemapHeader {
+    padding-top: 7px;
+}
+
+.mobileMode .sitemapHeader {
+    padding-top: 0px;
+}
+
+.sitemapToolbar {
+    margin: 0px 3px 0px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.sitemapToolbarButton {
+    width: 19px;
+    height: 18px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.hashover .sitemapToolbarButton:hover {
+    border-radius: 3px;
+    background-color: #e6e6e6 !important;
+}
+
+.sitemapToolbarButton.sitemapToolbarButtonSelected, .sitemapToolbarButton.sitemapToolbarButtonSelected:hover{
+    background-color: inherit !important;
+}
+
+.leftArrow {
+    background: url('images/left_arrow.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    margin-left: 11px;
+}
+
+.rightArrow {
+    background: url('images/right_arrow.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    margin-left: 3px;
+    margin-right: 2px;
+}
+
+#searchIcon {
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+    background: url('images/search_on.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    vertical-align: bottom;
+    padding: 5px 4px 5px 4px;
+    display: inline-block;
+}
+
+#searchIcon.sitemapToolbarButtonSelected {
+    padding: 5px 3px 5px 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: solid 1px #cccccc;
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    background: url('images/search_off.svg') no-repeat center center, linear-gradient(transparent,transparent);
+    background-color: #FFFFFF !important;
+}
+
+.backKeys {
+    width: 20px;
+    height: 21px;
+    object-fit: contain;
+    vertical-align: bottom;
+    margin: 2px;
+    display: inline-block;
+    background: url('images/back_keys.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+.forwardKeys {
+    width: 20px;
+    height: 21px;
+    object-fit: contain;
+    vertical-align: bottom;
+    margin: 2px;
+    display: inline-block;
+    background: url('images/forward_keys.svg') no-repeat center center, linear-gradient(transparent,transparent);
+}
+
+#interfaceAdaptiveViewsListContainer {
+    position: absolute;
+    display: none;
+    width: 220px;
+    left: 155px;
+    padding: 6px 9px;
+    top: 36px;
+}
+
+#interfaceScaleListContainer {
+    padding: 7.5px 9px 12px 16px;
+    margin-top: 9px;
+    border-top: solid 1px #bdbcbc;
+    order: 10;
+}
+
+.adaptiveViewOption, .vpPresetOption, .vpScaleOption {
+    padding: 3px 0px 3px 0px;
+    color: #3B3B3B;
+    display: flex;
+}
+
+.projectOptionsScaleRow, .projectOptionsAdaptiveViewRow, .projectOptionsHotspotsRow {
+    border-top: solid 1px #c7c7c7;
+    display: flex;
+    padding: 13px 7px 13px 0px;
+}
+
+.adaptiveViewOption:hover, .vpScaleOption:hover, .vpPresetOption:hover, .projectOptionsAdaptiveViewRow:hover, .projectOptionsScaleRow:hover
+{ 
+	cursor: pointer;
+}
+
+.scaleRadioButton, .adapViewRadioButton {
+    border: solid 1px #8c8c8c;
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 48px;
+    margin-right: 12px;
+    top: 2px;
+    flex-shrink: 0;
+}
+
+.mobileMode .scaleRadioButton, .mobileMode .adapViewRadioButton {
+    width: 20px;
+    height: 20px;
+    border-radius: 60px;
+    margin-right: 22px;
+    margin-left: 22px;
+    top: 0px;
+    flex-shrink: 0;
+}
+
+.selectedRadioButton {
+    border: solid 1px #20aca9;
+}
+
+.selectedRadioButtonFill { 
+    position: relative;
+    display: none;
+    background-color: #20aca9;
+    margin: auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 30px;
+    top: 2px;
+}
+    .mobileMode .selectedRadioButtonFill {
+        width: 12px;
+        height: 12px;
+        border-radius: 48px;
+        top: 4px;
+    }
+
+#searchDiv {
+    display: flex;
+    margin-right: auto;
+    flex: 1;
+}
+
+#searchBox {
+    display: none;
+    width: 0%;
+    height: 22px;
+    padding-left: 5px;
+    border-radius: 0px 5px 5px 0px;
+    border-right: solid 1px #cccccc;
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    border-left: none;
+    -webkit-appearance: none;
+}
+
+#searchBox:focus {
+    outline-width: 0;
+}
+
+.searchBoxHint {
+	color: #8f949a;
+}
+
+#sitemapHost.popup #searchDiv{
+    display: none;
+}
+
+#sitemapHost.popup #sitemapHeader{
+    display: none;
+}
+
+#sitemapHost.popup #changePageInstructions{
+    display: none;
+}
+
+.mobileMode #sitemapHeader {
+    display: none;
+}
+
+
+
+/* Expo Sitemap
+******************************************************************************/
+
+.expoSitemapNode {
+    padding: 15px;
+    text-align: center;
+}
+
+.sitemapPageImg {
+    max-width: 90%;
+    max-height: 150px;
+}
+
+.popup .sitemapPageImg {
+    display: none;
+}
+
+.popup .expoSitemapNode {
+    padding: 0 0 0 10px;
+    text-align: left;
+}
