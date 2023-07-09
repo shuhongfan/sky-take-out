@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.DishFlavorMapper">
+
+<!--    批量插入口味数据-->
+    <insert id="insertBatch">
+        insert into dish_flavor (dish_id, name, value) VALUES
+             <foreach collection="flavors" separator="," item="item">
+                 (#{item.dishId},#{item.name},#{item.value})
+             </foreach>
+    </insert>
+
+<!--    删除菜单关联的口味数据-->
+    <delete id="deleteByDishId">
+        delete
+        from dish_flavor
+        where dish_id =#{id} ;
+    </delete>
+
+<!--    根据菜品id查询口味数据-->
+    <select id="getByDishId" resultType="com.sky.entity.DishFlavor">
+        select *
+        from dish_flavor where dish_id=#{dishId};
+    </select>
+</mapper>
