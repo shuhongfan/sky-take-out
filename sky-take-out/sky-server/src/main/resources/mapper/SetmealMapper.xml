@@ -2,8 +2,65 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.SetmealMapper">
+    <!--    向套餐表插入数据-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into setmeal(category_id, name, price, description, image, create_time, update_time, create_user,
+                            update_user)
+        values (#{categoryId}, #{name}, #{price}, #{description}, #{image}, #{createTime}, #{updateTime}, #{createUser},
+                #{updateUser});
+
+    </insert>
+    <!--    修改套餐表-->
+    <update id="update">
+        update setmeal
+        <set>
+            <if test="name != null"> name = #{name}, </if>
+            <if test="categoryId != null"> category_id = #{categoryId}, </if>
+            <if test="price != null"> price = #{price}, </if>
+            <if test="status != null"> status = #{status}, </if>
+            <if test="description != null"> description = #{description}, </if>
+            <if test="image != null"> image = #{image}, </if>
+            <if test="updateTime != null"> update_time = #{updateTime}, </if>
+            <if test="updateUser != null"> update_user = #{updateUser} </if>
+        </set>
+        where id=#{id};
+    </update>
+
+    <!--    根据id删除数据-->
+    <delete id="deleteById">
+        delete
+        from setmeal
+        where id = #{id};
+    </delete>
 
     <select id="countByCategoryId" resultType="java.lang.Integer">
-        select count(id) from setmeal where category_id = #{categoryId}
+        select count(id)
+        from setmeal
+        where category_id = #{categoryId}
+    </select>
+
+    <!--    分页查询-->
+    <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
+        select s.*,c.name categoryName
+        from setmeal s left join category c on s.category_id = c.id
+        <where>
+            <if test="name!=null">
+                and s.name like concat('%',#{name},'%')
+            </if>
+            <if test="status!=null">
+                and s.status=#{status}
+            </if>
+            <if test="categoryId!=null">
+                and s.category_id=#{categoryId}
+            </if>
+        </where>
+        order by s.create_time desc
+    </select>
+
+    <!--    根据id查询数据-->
+    <select id="getById" resultType="com.sky.entity.Setmeal">
+        select *
+        from setmeal
+        where id = #{id};
     </select>
 </mapper>

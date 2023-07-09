@@ -54,6 +54,33 @@
         from dish where id=#{id};
     </select>
 
+<!--    根据分类id查询菜品-->
+    <select id="list" resultType="com.sky.entity.Dish">
+        select *
+        from dish
+        <where>
+            <if test="name!=null">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="categoryId!=null">
+                and category_id=#{categoryId}
+            </if>
+            <if test="status!=null">
+                and status=#{status}
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+
+<!--    根据套餐id查询菜品-->
+    <select id="getBySetmealId" resultType="com.sky.entity.Dish">
+        select d.*
+        from dish d,
+             setmeal_dish sd
+        where d.id = sd.dish_id
+          and sd.setmeal_id = #{id}
+    </select>
+
     <!--    添加菜品-->
     <insert id="insert" useGeneratedKeys="true" keyProperty="id">
         insert into dish (name, category_id, price, image, description, create_time, update_time, create_user,
