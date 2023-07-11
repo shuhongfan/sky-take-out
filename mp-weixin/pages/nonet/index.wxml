@@ -1,0 +1,1 @@
+<view class="nonet_content data-v-751e51d6"><view class="success_info data-v-751e51d6"><image class="success_icon data-v-751e51d6" src="../../static/noNet.png" mode></image><view class="success_title data-v-751e51d6">网络无法连接</view><view data-event-opts="{{[['tap',[['goIndex']]]]}}" class="go_dish data-v-751e51d6" bindtap="__e">点击刷新</view></view></view>

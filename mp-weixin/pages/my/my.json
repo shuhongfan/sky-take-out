@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "个人中心",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#ffc200",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "reach-bottom": "/components/reach-bottom/reach-bottom"
+  }
+}

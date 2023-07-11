@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "地址管理",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#333333",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "empty": "/components/empty/empty"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="navBar"><view data-event-opts="{{[['tap',[['myCenterFun',['$event']]]]]}}" class="person-box" style="{{'top:'+(ht+'px')+';'}}" bindtap="__e"><image class="test_image" src="../../../static/center.png"></image><label class="person-title _span">个人中心</label></view><image class="index_bg" src="../../../static/bg.png"></image></view>

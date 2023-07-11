@@ -1,0 +1,1 @@
+<view class="bottom-box"><view class="bottom-item"><text class="title">{{loadingText}}</text></view></view>

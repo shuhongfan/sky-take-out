@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sky.mapper.UserMapper">
+<!--    创建新用户-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into user(openid, name, phone, sex, id_number, avatar, create_time)
+        VALUES (#{openid},#{name},#{phone},#{sex},#{idNumber},#{avatar},#{createTime})
+    </insert>
+
+<!--    根据openid获取当前用户-->
+    <select id="getByOpenId" resultType="com.sky.entity.User">
+        select *
+        from user where openid=#{openid};
+    </select>
+</mapper>

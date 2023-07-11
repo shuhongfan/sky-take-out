@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.uni-easyinput {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  text-align: left;
+  color: #333;
+  font-size: 14px;
+}
+.uni-easyinput__content {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  min-height: 36px;
+  flex-direction: row;
+  align-items: center;
+}
+.uni-easyinput__content-input {
+  width: auto;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  line-height: 1;
+  font-size: 14px;
+}
+.uni-easyinput__placeholder-class {
+  color: #999;
+  font-size: 12px;
+  font-weight: 200;
+}
+.is-textarea {
+  align-items: flex-start;
+}
+.is-textarea-icon {
+  margin-top: 5px;
+}
+.uni-easyinput__content-textarea {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  line-height: 1.5;
+  font-size: 14px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  height: 80px;
+  min-height: 80px;
+  width: auto;
+}
+.input-padding {
+  padding-left: 10px;
+}
+.content-clear-icon {
+  padding: 0 5px;
+}
+.label-icon {
+  margin-right: 5px;
+  margin-top: -1px;
+}
+.is-input-border {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #DCDFE6;
+  border-radius: 4px;
+}
+.uni-error-message {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  line-height: 12px;
+  color: #e43d33;
+  font-size: 12px;
+  text-align: left;
+}
+.uni-error-msg--boeder {
+  position: relative;
+  bottom: 0;
+  line-height: 22px;
+}
+.is-input-error-border {
+  border-color: #e43d33;
+}
+.is-input-error-border .uni-easyinput__placeholder-class {
+  color: #f29e99;
+}
+.uni-easyinput--border {
+  margin-bottom: 0;
+  padding: 10px 15px;
+  border-top: 1px #eee solid;
+}
+.uni-easyinput-error {
+  padding-bottom: 0;
+}
+.is-first-border {
+  border: none;
+}
+.is-disabled {
+  border-color: red;
+  background-color: #F7F6F6;
+  color: #D5D5D5;
+}
+.is-disabled .uni-easyinput__placeholder-class {
+  color: #D5D5D5;
+  font-size: 12px;
+}
+

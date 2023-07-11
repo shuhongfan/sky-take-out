@@ -1,0 +1,11 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "订单详情",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#333333",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "uni-list-item": "/node-modules/@dcloudio/uni-ui/lib/uni-list-item/uni-list-item"
+  }
+}
