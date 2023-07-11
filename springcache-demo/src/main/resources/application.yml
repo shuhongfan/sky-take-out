@@ -1,0 +1,21 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spring_cache_demo?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    database: 1
+logging:
+  level:
+    com:
+      itheima:
+        mapper: debug
+        service: info
+        controller: info
