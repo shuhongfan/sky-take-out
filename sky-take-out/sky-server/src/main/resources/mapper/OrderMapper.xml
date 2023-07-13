@@ -79,4 +79,10 @@
         select count(*)
         from orders where status=#{status};
     </select>
+
+<!--    根据状态和下单时间查询订单-->
+    <select id="getByStatusAndOrderTime" resultType="com.sky.entity.Orders">
+        select *
+        from orders where status=#{status} and order_time&lt;#{orderTime};
+    </select>
 </mapper>
