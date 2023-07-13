@@ -51,4 +51,32 @@
         where number = #{orderNumber}
           and user_id = #{userId};
     </select>
+
+<!--    分页条件查询-->
+    <select id="pageQuery" resultType="com.sky.entity.Orders">
+        select *
+        from orders
+        <where>
+            <if test="number!=null and number!=''">and number like concat('%',#{number},'%')</if>
+            <if test="phone!=null and phone!=''">and phone like concat('%',#{phone},'%')</if>
+            <if test="userId!=null and userId!=''">and user_id=#{userId}</if>
+            <if test="status!=null and status!=''">and status=#{status}</if>
+            <if test="beginTime!=null and beginTime!=''">and order_time&gt;=#{beginTime}</if>
+            <if test="endTime!=null and endTime!=''">and order_time&lt;=#{endTime}</if>
+        </where>
+        order by order_time desc
+    </select>
+
+<!--    根据id查询订单-->
+    <select id="getById" resultType="com.sky.entity.Orders">
+        select *
+        from orders
+        where id = #{id};
+    </select>
+
+<!--    根据状态，分别查询出接待单，待派送、派送中的订单数量-->
+    <select id="countStatus" resultType="java.lang.Integer">
+        select count(*)
+        from orders where status=#{status};
+    </select>
 </mapper>

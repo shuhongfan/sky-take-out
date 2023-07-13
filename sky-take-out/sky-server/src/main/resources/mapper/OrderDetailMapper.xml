@@ -11,4 +11,11 @@
             #{od.number},#{od.amount},#{od.image})
         </foreach>
     </insert>
+
+<!--    查询订单明细-->
+    <select id="getByOrderId" resultType="com.sky.entity.OrderDetail">
+        select *
+        from order_detail
+        where order_id = #{id};
+    </select>
 </mapper>
