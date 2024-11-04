@@ -2,86 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sky.mapper.DishMapper">
-<!--    修改菜品基本信息-->
-    <update id="update">
-        update dish
-        <set>
-            <if test="name != null">name = #{name},</if>
-            <if test="categoryId != null">category_id = #{categoryId},</if>
-            <if test="price != null">price = #{price},</if>
-            <if test="image != null">image = #{image},</if>
-            <if test="description != null">description = #{description},</if>
-            <if test="status != null">status = #{status},</if>
-            <if test="updateTime != null">update_time = #{updateTime},</if>
-            <if test="updateUser != null">update_user = #{updateUser},</if>
-        </set>
-            where id =#{id}
-    </update>
-    <!--    删除菜品表中的菜品数据-->
-    <delete id="deleteById">
-        delete
-        from dish
-        where id=#{id};
-    </delete>
-    <!--    根据分类id查询菜品数量-->
-    <select id="countByCategoryId" resultType="java.lang.Integer">
-        select count(id)
-        from dish
-        where category_id = #{categoryId}
-    </select>
 
-<!--    菜品分页查询-->
-    <select id="pageQuery" resultType="com.sky.vo.DishVO">
-        select d.*,c.name as categoryName
-        from dish d left join category c on d.category_id = c.id
+
+    <select id="selectDishPage" resultType="com.sky.vo.DishVO">
+        select d.*,c.name as categoryName from dish d left outer join category c on d.category_id = c.id
         <where>
-            <if test="name!=null">
-                and d.name like concat('%',#{name},'%')
+            <if test="dish.name != null">
+                and d.name like concat('%',#{dish.name},'%')
             </if>
-            <if test="categoryId!=null">
-                and d.categoryId like concat('%',#{categoryId},'%')
+            <if test="dish.categoryId != null">
+                and d.category_id =#{dish.categoryId}
             </if>
-            <if test="status!=null">
-                and d.status like concat('%',#{status},'%')
+            <if test="dish.status != null">
+                and d.status =#{dish.status}
             </if>
         </where>
-        order by d.create_time desc
+        order by d.update_time desc
     </select>
 
-<!--    获取菜品-->
-    <select id="getById" resultType="com.sky.entity.Dish">
-        select *
-        from dish where id=#{id};
-    </select>
-
-<!--    根据分类id查询菜品-->
-    <select id="list" resultType="com.sky.entity.Dish">
-        select *
-        from dish
-        <where>
-            <if test="name!=null">
-                and name like concat('%',#{name},'%')
-            </if>
-            <if test="categoryId!=null">
-                and category_id=#{categoryId}
-            </if>
-            <if test="status!=null">
-                and status=#{status}
-            </if>
-        </where>
-        order by create_time desc
-    </select>
-
-<!--    根据套餐id查询菜品-->
     <select id="getBySetmealId" resultType="com.sky.entity.Dish">
-        select d.*
-        from dish d,
-             setmeal_dish sd
-        where d.id = sd.dish_id
-          and sd.setmeal_id = #{id}
+        select d.* from dish d left join setmeal_dish s on d.id = s.dish_id where s.setmeal_id=#{id}
     </select>
 
-<!--    根据条件统计菜品数量-->
     <select id="countByMap" resultType="java.lang.Integer">
         select count(id) from dish
         <where>
@@ -93,12 +35,4 @@
             </if>
         </where>
     </select>
-
-    <!--    添加菜品-->
-    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        insert into dish (name, category_id, price, image, description, create_time, update_time, create_user,
-                          update_user, status)
-        values (#{name}, #{categoryId}, #{price}, #{image}, #{description}, #{createTime}, #{updateTime}, #{createUser},
-                #{updateUser}, #{status})
-    </insert>
 </mapper>

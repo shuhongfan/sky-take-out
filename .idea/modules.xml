@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/sky-take-out.iml" filepath="$PROJECT_DIR$/.idea/sky-take-out.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sky-take-out/sky-take-out.iml" filepath="$PROJECT_DIR$/sky-take-out/sky-take-out.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sky-take-out2.iml" filepath="$PROJECT_DIR$/.idea/sky-take-out2.iml" />
     </modules>
   </component>
 </project>

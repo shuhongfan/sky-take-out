@@ -46,11 +46,6 @@ public class AddressBookController {
         return Result.success();
     }
 
-    /**
-     * 根据id查询地址
-     * @param id
-     * @return
-     */
     @GetMapping("/{id}")
     @ApiOperation("根据id查询地址")
     public Result<AddressBook> getById(@PathVariable Long id) {
@@ -96,18 +91,20 @@ public class AddressBookController {
         addressBookService.deleteById(id);
         return Result.success();
     }
+
     /**
      * 查询默认地址
      */
     @GetMapping("default")
     @ApiOperation("查询默认地址")
     public Result<AddressBook> getDefault() {
+        //SQL:select * from address_book where user_id = ? and is_default = 1
         AddressBook addressBook = new AddressBook();
-        addressBook.setUserId(BaseContext.getCurrentId());
         addressBook.setIsDefault(1);
+        addressBook.setUserId(BaseContext.getCurrentId());
         List<AddressBook> list = addressBookService.list(addressBook);
 
-        if (list != null && list.size() > 0) {
+        if (list != null && list.size() == 1) {
             return Result.success(list.get(0));
         }
 

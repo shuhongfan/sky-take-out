@@ -18,13 +18,19 @@ spring:
     password: ${sky.redis.password}
     database: ${sky.redis.database}
 
-mybatis:
-  #mapper配置文件
+#mybatis:
+#  #mapper配置文件
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.sky.entity
+#  configuration:
+#    #开启驼峰命名
+#    map-underscore-to-camel-case: true
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.sky.entity
-  configuration:
-    #开启驼峰命名
-    map-underscore-to-camel-case: true
+
 
 logging:
   level:

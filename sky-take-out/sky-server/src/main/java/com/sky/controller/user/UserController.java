@@ -18,47 +18,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import java.util.Objects;
+import java.util.Map;
 
-/**
- * 微信登录
- */
 @RestController
 @RequestMapping("/user/user")
 @Api(tags = "C端用户相关接口")
 @Slf4j
 public class UserController {
-
     @Autowired
-    private UserService userService;
+    UserService userService;
 
     @Autowired
     private JwtProperties jwtProperties;
-
-    /**
-     * 微信登录
-     * @param userLoginDTO
-     * @return
-     */
     @PostMapping("/login")
-    @ApiOperation("微信登录")
-    public Result<UserLoginVO> login(@RequestBody UserLoginDTO userLoginDTO) {
-        log.info("微信用户登录：{}",userLoginDTO.getCode());
-
-//        微信登录
-        User user = userService.wxLogin(userLoginDTO);
-
-//        为微信用户生成jwt令牌
-        HashMap<String, Object> claims = new HashMap<>();
-        claims.put(JwtClaimsConstant.USER_ID, user.getId());
-        String token = JwtUtil.createJWT(jwtProperties.getUserSecretKey(), jwtProperties.getUserTtl(), claims);
-
-        UserLoginVO userLoginVO = UserLoginVO.builder()
-                .id(user.getId())
+    @ApiOperation("微信用户登录")
+    public Result login(@RequestBody UserLoginDTO userLoginDTO) {
+        log.info("微信用户登录:{}",userLoginDTO.getCode());
+        User user= userService.wxlogin(userLoginDTO);
+        Map<String,Object> map=new HashMap<>();
+        map.put(JwtClaimsConstant.USER_ID,user.getId());
+        // 生成令牌
+        String jwt = JwtUtil.createJWT(jwtProperties.getUserSecretKey(), jwtProperties.getUserTtl(), map);
+        UserLoginVO userLoginVO = UserLoginVO.builder().id(user.getId())
                 .openid(user.getOpenid())
-                .token(token)
+                .token(jwt)
                 .build();
         return Result.success(userLoginVO);
-    }
 
+    }
 }

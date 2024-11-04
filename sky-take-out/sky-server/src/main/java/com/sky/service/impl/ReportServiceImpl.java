@@ -1,16 +1,16 @@
 package com.sky.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.sky.dto.GoodsSalesDTO;
 import com.sky.entity.Orders;
+import com.sky.entity.User;
+import com.sky.mapper.OrderDetailMapper;
 import com.sky.mapper.OrderMapper;
 import com.sky.mapper.UserMapper;
-import com.sky.service.ReportService;
+import com.sky.service.ReportServer;
 import com.sky.service.WorkspaceService;
 import com.sky.vo.*;
-import io.swagger.models.auth.In;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,253 +30,186 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-@Slf4j
-public class ReportServiceImpl implements ReportService {
-
+public class ReportServiceImpl implements ReportServer {
     @Autowired
-    private OrderMapper orderMapper;
-
+    OrderMapper orderMapper;
     @Autowired
-    private UserMapper userMapper;
-
+    UserMapper userMapper;
     @Autowired
-    private WorkspaceService workspaceService;
-
-    /**
-     * 根据时间区间统计营业额
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
+    OrderDetailMapper orderDetailMapper;
+    @Autowired
+    WorkspaceService workspaceService;
     @Override
-    public TurnoverReportVO getTurnover(LocalDate begin, LocalDate end) {
-        List<LocalDate> dateList = new ArrayList<>();
-        dateList.add(begin);
-
-        while (!begin.equals(end)) {
-            begin = begin.plusDays(1);//日期计算，获得指定日期后1天的日期
+    public TurnoverReportVO getTurnoverStatistics(LocalDate begin, LocalDate end) {
+        List<LocalDate> dateList=new ArrayList<>();
+        List<Double> amountList=new ArrayList<>();
+        while (begin.isBefore(end)){
             dateList.add(begin);
+            begin=begin.plusDays(1);
         }
+        dateList.add(end);
 
-        List<Double> turnoverList = new ArrayList<>();
-        for (LocalDate date : dateList) {
-            LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
-            LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
-            Map map = new HashMap();
-            map.put("status", Orders.COMPLETED);
-            map.put("begin", beginTime);
-            map.put("end", endTime);
 
-//            根据动态条件统计营业额
-            Double turnover = orderMapper.sumByMap(map);
-            turnover = turnover == null ? 0.0 : turnover;
-            turnoverList.add(turnover);
-        }
-
-        //数据封装
-        return TurnoverReportVO.builder()
-                .dateList(StringUtils.join(dateList, ","))
-                .turnoverList(StringUtils.join(turnoverList, ","))
-                .build();
-    }
-
-    /**
-     * 根据时间区间统计用户数量
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
-    @Override
-    public UserReportVO getUserStatistics(LocalDate begin, LocalDate end) {
-        ArrayList<LocalDate> dateList = new ArrayList<>();
-        dateList.add(begin);
-
-        while (!begin.equals(end)) {
-            begin = begin.plusDays(1);
-            dateList.add(begin);
-        }
-
-        ArrayList<Integer> newUserList = new ArrayList<>();
-        ArrayList<Integer> totalUserList = new ArrayList<>();
-
-        dateList.forEach(date -> {
-            LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
-            LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
-
-            Integer newUser = getUserCount(beginTime, endTime);
-            Integer totalUser = getUserCount(null, endTime);
-
-            newUserList.add(newUser);
-            totalUserList.add(totalUser);
-        });
-
-        return UserReportVO.builder()
-                .dateList(StringUtils.join(dateList, ","))
-                .newUserList(StringUtils.join(newUserList, ","))
-                .totalUserList(StringUtils.join(totalUserList, ","))
-                .build();
-    }
-
-    /**
-     * 根据时间区间统计订单数量
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
-    @Override
-    public OrderReportVO getOrderStatistics(LocalDate begin, LocalDate end) {
-        ArrayList<LocalDate> dateList = new ArrayList<>();
-        dateList.add(begin);
-
-        while (!begin.equals(end)) {
-            begin = begin.plusDays(1);
-            dateList.add(begin);
-        }
-
-//        每天订单总数集合
-        ArrayList<Integer> orderCountList = new ArrayList<>();
-
-//        媒体有效订单数集合
-        ArrayList<Integer> validOrderCountList = new ArrayList<>();
 
         dateList.forEach(date->{
-            LocalDateTime beginTime = LocalDateTime.of(date, LocalTime.MIN);
-            LocalDateTime endTime = LocalDateTime.of(date, LocalTime.MAX);
+            LocalDateTime localDateTimeBegin = LocalDateTime.of(date, LocalTime.MIN);
+            LocalDateTime localDateTimeEnd = LocalDateTime.of(date, LocalTime.MAX);
+            Map map=new HashMap<>();
+            map.put("begin",localDateTimeBegin);
+            map.put("end",localDateTimeEnd);
+            map.put("status",Orders.COMPLETED);
+            Double turnover=orderMapper.sumByMap(map);
+            turnover=turnover==null ? 0.0:turnover;
+            amountList.add(turnover);
+        });
+        TurnoverReportVO turnoverReportVO = TurnoverReportVO.builder()
+                .dateList(StringUtils.join(dateList, ","))
+                .turnoverList(StringUtils.join(amountList, ","))
+                .build();
 
-//            查询每天总数
-            Integer orderCount = getOrderCount(beginTime, endTime, null);
+        return turnoverReportVO;
+    }
 
-//            查询每天有效订单数
-            Integer validOrderCount = getOrderCount(beginTime, endTime, Orders.COMPLETED);
+    @Override
+    public UserReportVO getUserStatistics(LocalDate begin, LocalDate end) {
+        List<LocalDate> dateList=new ArrayList<>();
+        List<Integer> allUserList=new ArrayList<>();
+        List<Integer> newUserList=new ArrayList<>();
+        while (begin.isBefore(end)){
+            dateList.add(begin);
+            begin=begin.plusDays(1);
+        }
+        dateList.add(end);
 
-            orderCountList.add(orderCount);
-            validOrderCountList.add(validOrderCount);
+
+
+        dateList.forEach(date->{
+            LocalDateTime localDateTimeBegin = LocalDateTime.of(date, LocalTime.MIN);
+            LocalDateTime localDateTimeEnd = LocalDateTime.of(date, LocalTime.MAX);
+            LambdaQueryWrapper<User>queryWrapper=new LambdaQueryWrapper<>();
+            queryWrapper.gt(User::getCreateTime,localDateTimeBegin)
+                    .lt(User::getCreateTime,localDateTimeEnd);
+            LambdaQueryWrapper<User>queryWrapper2=new LambdaQueryWrapper<>();
+            queryWrapper2.lt(User::getCreateTime,localDateTimeEnd);
+            int today= userMapper.selectCount(queryWrapper).intValue();
+            int all= userMapper.selectCount(queryWrapper2).intValue();
+            allUserList.add(all);
+            newUserList.add(today);
+
         });
 
-//        时间区间内的总订单数
-        Integer totalOrderCount = orderCountList.stream().reduce(Integer::sum).get();
 
-//        区间时间内有效订单数
-        Integer validOrderCount = validOrderCountList.stream().reduce(Integer::sum).get();
 
-//        订单完成率
-        Double orderCompletionRate = 0.0;
-        if (totalOrderCount != 0) {
-            orderCompletionRate = validOrderCount.doubleValue() / totalOrderCount;
+        return UserReportVO.builder()
+                .dateList(StringUtils.join(dateList,","))
+                .newUserList(StringUtils.join(newUserList,","))
+                .totalUserList(StringUtils.join(allUserList,","))
+                .build();
+    }
+
+    @Override
+    public OrderReportVO getOrdersStatistics(LocalDate begin, LocalDate end) {
+        List<LocalDate> dateList=new ArrayList<>();
+        List<Integer> todayAllOrderList=new ArrayList<>();
+        List<Integer> todayValidOrderList=new ArrayList<>();
+        while (begin.isBefore(end)){
+            dateList.add(begin);
+            begin=begin.plusDays(1);
         }
+        dateList.add(end);
 
 
+
+        dateList.forEach(date->{
+            LocalDateTime localDateTimeBegin = LocalDateTime.of(date, LocalTime.MIN);
+            LocalDateTime localDateTimeEnd = LocalDateTime.of(date, LocalTime.MAX);
+            LambdaQueryWrapper<Orders>queryWrapper=new LambdaQueryWrapper<>();
+            queryWrapper.gt(Orders::getOrderTime,localDateTimeBegin)
+                    .lt(Orders::getOrderTime,localDateTimeEnd)
+                    .eq(Orders::getStatus,Orders.COMPLETED);
+            LambdaQueryWrapper<Orders>queryWrapper2=new LambdaQueryWrapper<>();
+            queryWrapper2.gt(Orders::getOrderTime,localDateTimeBegin)
+                    .lt(Orders::getOrderTime,localDateTimeEnd);
+            int todayAll= orderMapper.selectCount(queryWrapper2).intValue();
+            int todayValid= orderMapper.selectCount(queryWrapper).intValue();
+            todayAllOrderList.add(todayAll);
+            todayValidOrderList.add(todayValid);
+        });
+        Integer AllOrder = todayAllOrderList.stream().reduce(Integer::sum).get();
+        Integer ValidOrder = todayValidOrderList.stream().reduce(Integer::sum).get();
+
+        Double orderCompletionRate=0.0;
+        if(AllOrder!=0){
+            orderCompletionRate=ValidOrder.doubleValue()/AllOrder;
+        }
         return OrderReportVO.builder()
-                .dateList(StringUtils.join(dateList, ","))
-                .orderCountList(StringUtils.join(orderCountList, ","))
-                .validOrderCountList(StringUtils.join(validOrderCountList, ","))
-                .totalOrderCount(totalOrderCount)
-                .validOrderCount(validOrderCount)
+                .dateList(StringUtils.join(dateList,","))
+                .orderCountList(StringUtils.join(todayAllOrderList,","))
+                .validOrderCountList(StringUtils.join(todayValidOrderList,","))
+                .totalOrderCount(AllOrder)
+                .validOrderCount(ValidOrder)
                 .orderCompletionRate(orderCompletionRate)
                 .build();
     }
 
-    /**
-     * 查询指定时间区间内的销量排名top10
-     *
-     * @param begin
-     * @param end
-     * @return
-     */
     @Override
-    public SalesTop10ReportVO getSalesTop10(LocalDate begin, LocalDate end) {
-        LocalDateTime beginTime = LocalDateTime.of(begin, LocalTime.MIN);
-        LocalDateTime endTime = LocalDateTime.of(end, LocalTime.MAX);
+    public SalesTop10ReportVO getTop10(LocalDate begin, LocalDate end) {
+        LocalDateTime localDateTimeBegin = LocalDateTime.of(begin, LocalTime.MIN);
+        LocalDateTime localDateTimeEnd = LocalDateTime.of(end, LocalTime.MAX);
+        List<GoodsSalesDTO> goodsSalesDTOS=orderDetailMapper.getTop10(localDateTimeBegin,localDateTimeEnd);
+        List<String> nameList = goodsSalesDTOS.stream().map(GoodsSalesDTO::getName).collect(Collectors.toList());
+        List<Integer> numberList = goodsSalesDTOS.stream().map(GoodsSalesDTO::getNumber).collect(Collectors.toList());
 
-        List<GoodsSalesDTO> goodsSalesDTOList = orderMapper.getSalesTop10(beginTime, endTime);
 
-        String nameList = StringUtils.join(goodsSalesDTOList.stream().map(GoodsSalesDTO::getName).collect(Collectors.toList()), ",");
-        String numberList = StringUtils.join(goodsSalesDTOList.stream().map(GoodsSalesDTO::getNumber).collect(Collectors.toList()), ",");
-        return SalesTop10ReportVO.builder().nameList(nameList).numberList(numberList).build();
+        return SalesTop10ReportVO.builder()
+                .nameList(StringUtils.join(nameList,","))
+                .numberList(StringUtils.join(numberList,","))
+                .build();
     }
 
-    /**
-     * 导出近30天的运营数据报表
-     * @param response
-     */
     @Override
-    public void exportBusinessData(HttpServletResponse response) {
-        LocalDate begin = LocalDate.now().minusDays(30);
+    public void exportBusinessData(HttpServletResponse httpServletResponse) {
+
+        LocalDate begin = LocalDate.now().minusDays(31);
         LocalDate end = LocalDate.now().minusDays(1);
-        //查询概览运营数据，提供给Excel模板文件
-        BusinessDataVO businessData = workspaceService.getBusinessData(LocalDateTime.of(begin,LocalTime.MIN), LocalDateTime.of(end, LocalTime.MAX));
-        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("template/运营数据报表模板.xlsx");
+        LocalDateTime localDateTimeBegin = LocalDateTime.of(begin, LocalTime.MIN);
+        LocalDateTime localDateTimeEnd = LocalDateTime.of(end, LocalTime.MAX);
+        BusinessDataVO businessData = workspaceService.getBusinessData(localDateTimeBegin, localDateTimeEnd);
+
+        InputStream resourceAsStream = this.getClass().getClassLoader().getResourceAsStream("templates/运营数据报表模板.xlsx");
         try {
-            //基于提供好的模板文件创建一个新的Excel表格对象
-            XSSFWorkbook excel = new XSSFWorkbook(inputStream);
-            //获得Excel文件中的一个Sheet页
-            XSSFSheet sheet = excel.getSheet("Sheet1");
+            XSSFWorkbook excel = new XSSFWorkbook(resourceAsStream);
+            XSSFSheet sheet1 = excel.getSheet("Sheet1");
+            sheet1.getRow(1).getCell(1).setCellValue("时间:"+begin+"至"+end);
 
-            sheet.getRow(1).getCell(1).setCellValue(begin + "至" + end);
-            //获得第4行
-            XSSFRow row = sheet.getRow(3);
-            //获取单元格
-            row.getCell(2).setCellValue(businessData.getTurnover());
-            row.getCell(4).setCellValue(businessData.getOrderCompletionRate());
-            row.getCell(6).setCellValue(businessData.getNewUsers());
-            row = sheet.getRow(4);
-            row.getCell(2).setCellValue(businessData.getValidOrderCount());
-            row.getCell(4).setCellValue(businessData.getUnitPrice());
+            sheet1.getRow(3).getCell(2).setCellValue(businessData.getTurnover());
+            sheet1.getRow(3).getCell(4).setCellValue(businessData.getOrderCompletionRate());
+            sheet1.getRow(3).getCell(6).setCellValue(businessData.getNewUsers());
+            sheet1.getRow(4).getCell(2).setCellValue(businessData.getValidOrderCount());
+            sheet1.getRow(4).getCell(4).setCellValue(businessData.getUnitPrice());
+
+
             for (int i = 0; i < 30; i++) {
-                LocalDate date = begin.plusDays(i);
-                //准备明细数据
-                businessData = workspaceService.getBusinessData(LocalDateTime.of(date,LocalTime.MIN), LocalDateTime.of(date, LocalTime.MAX));
-                row = sheet.getRow(7 + i);
-                row.getCell(1).setCellValue(date.toString());
-                row.getCell(2).setCellValue(businessData.getTurnover());
-                row.getCell(3).setCellValue(businessData.getValidOrderCount());
-                row.getCell(4).setCellValue(businessData.getOrderCompletionRate());
-                row.getCell(5).setCellValue(businessData.getUnitPrice());
-                row.getCell(6).setCellValue(businessData.getNewUsers());
+                begin = begin.plusDays(1);
+                LocalDateTime dayBegin = LocalDateTime.of(begin, LocalTime.MIN);
+                LocalDateTime dayEnd = LocalDateTime.of(begin, LocalTime.MAX);
+                BusinessDataVO businessData1 = workspaceService.getBusinessData(dayBegin, dayEnd);
+                sheet1.getRow(7+i).getCell(1).setCellValue(begin.toString());
+                sheet1.getRow(7+i).getCell(2).setCellValue(businessData1.getTurnover());
+                sheet1.getRow(7+i).getCell(3).setCellValue(businessData1.getValidOrderCount());
+                sheet1.getRow(7+i).getCell(4).setCellValue(businessData1.getOrderCompletionRate());
+                sheet1.getRow(7+i).getCell(5).setCellValue(businessData1.getUnitPrice());
+                sheet1.getRow(7+i).getCell(6).setCellValue(businessData1.getNewUsers());
             }
-            //通过输出流将文件下载到客户端浏览器中
-            ServletOutputStream out = response.getOutputStream();
-            excel.write(out);
-            //关闭资源
-            out.flush();
-            out.close();
+
+
+
+            ServletOutputStream outputStream = httpServletResponse.getOutputStream();
+            excel.write(outputStream);
             excel.close();
-
-        }catch (IOException e){
-            e.printStackTrace();
+            outputStream.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-    }
-
-    /**
-     * 根据时间区间统计指定状态的订单数量
-     *
-     * @param beginTime
-     * @param endTime
-     * @param status
-     * @return
-     */
-    private Integer getOrderCount(LocalDateTime beginTime, LocalDateTime endTime, Integer status) {
-        Map map = new HashMap();
-        map.put("status", status);
-        map.put("begin", beginTime);
-        map.put("end", endTime);
-        return orderMapper.countByMap(map);
-    }
-
-    /**
-     * 根据时间区间统计用户数量
-     *
-     * @param beginTime
-     * @param endTime
-     * @return
-     */
-    private Integer getUserCount(LocalDateTime beginTime, LocalDateTime endTime) {
-        Map map = new HashMap();
-        map.put("begin", beginTime);
-        map.put("end", endTime);
-        return userMapper.countByMap(map);
     }
 }

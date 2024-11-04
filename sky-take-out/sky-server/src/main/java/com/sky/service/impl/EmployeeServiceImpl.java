@@ -1,7 +1,8 @@
 package com.sky.service.impl;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.sky.constant.MessageConstant;
 import com.sky.constant.PasswordConstant;
 import com.sky.constant.StatusConstant;
@@ -19,10 +20,10 @@ import com.sky.service.EmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.DigestUtils;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -41,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         String password = employeeLoginDTO.getPassword();
 
         //1、根据用户名查询数据库中的数据
-        Employee employee = employeeMapper.getByUsername(username);
+        Employee employee = employeeMapper.selectOne(new LambdaQueryWrapper<Employee>().eq(Employee::getUsername,username));
 
         //2、处理各种异常情况（用户名不存在、密码不对、账号被锁定）
         if (employee == null) {
@@ -50,9 +51,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         //密码比对
-        // TODO 后期需要进行md5加密，然后再进行比对
-        password = DigestUtils.md5DigestAsHex(password.getBytes());
-        if (!password.equals(employee.getPassword())) {
+        String encode = DigestUtils.md5DigestAsHex(password.getBytes());
+        if (!encode.equals(employee.getPassword())) {
             //密码错误
             throw new PasswordErrorException(MessageConstant.PASSWORD_ERROR);
         }
@@ -66,93 +66,64 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employee;
     }
 
-    /**
-     * 新增员工
-     * @param employeeDTO
-     */
     @Override
+    @Transactional
     public void save(EmployeeDTO employeeDTO) {
-        Employee employee = new Employee();
+        Employee employee=new Employee();
+        BeanUtils.copyProperties(employeeDTO,employee);
 
-        //对象属性拷贝
-        BeanUtils.copyProperties(employeeDTO, employee);
-
-        //设置账号的状态，默认正常状态 1表示正常 0表示锁定
-        employee.setStatus(StatusConstant.ENABLE);
-
-        //设置密码，默认密码123456
-        employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
-
-        //设置当前记录的创建时间和修改时间
         employee.setCreateTime(LocalDateTime.now());
+        employee.setStatus(StatusConstant.ENABLE);
         employee.setUpdateTime(LocalDateTime.now());
+        employee.setPassword(DigestUtils.md5DigestAsHex(PasswordConstant.DEFAULT_PASSWORD.getBytes()));
+        employee.setCreateUser(BaseContext.getCurrentId());
+        employee.setUpdateUser(BaseContext.getCurrentId());
 
-//        通过ThreadLocal获取用户信息
-        Long currentId = BaseContext.getCurrentId();
+        employeeMapper.insert(employee);
 
-        //设置当前记录创建人id和修改人id
-        employee.setCreateUser(currentId);//目前写个假数据，后期修改
-        employee.setUpdateUser(currentId);
 
-        employeeMapper.insert(employee);//后续步骤定义
     }
 
-    /**
-     * 员工分页查询
-     * @param employeePageQueryDTO
-     * @return
-     */
     @Override
-    public PageResult pageQuery(EmployeePageQueryDTO employeePageQueryDTO) {
-//        开始分页查询
-        PageHelper.startPage(employeePageQueryDTO.getPage(), employeePageQueryDTO.getPageSize());
+    public PageResult list(EmployeePageQueryDTO employeePageQueryDTO) {
 
-        Page<Employee> page = employeeMapper.pageQuery(employeePageQueryDTO);
+        LambdaQueryWrapper<Employee> queryWrapper=new LambdaQueryWrapper<>();
+        if(employeePageQueryDTO.getName()==null){
+            queryWrapper.like(Employee::getUsername,"");
+        }else{
+            queryWrapper.like(Employee::getUsername,employeePageQueryDTO.getName());
+        }
+        queryWrapper.orderByDesc(Employee::getUpdateTime);
+        Page<Employee> userPage = new Page<>(employeePageQueryDTO.getPage() -1, employeePageQueryDTO.getPageSize());
+        Page<Employee> employeePage = employeeMapper.selectPage(userPage, queryWrapper);
 
-        long total = page.getTotal();
-        List<Employee> records = page.getResult();
-
-        return new PageResult(total, records);
+        return new PageResult(employeePage.getTotal(),employeePage.getRecords());
     }
 
-    /**
-     * 启用禁用员工账户
-     * @param status
-     * @param id
-     */
     @Override
+    @Transactional
     public void startOrStop(Integer status, Long id) {
-        Employee employee = Employee.builder()
-                .status(status)
-                .id(id)
-                .build();
-        employeeMapper.update(employee);
+        LambdaUpdateWrapper<Employee> updateWrapper=new LambdaUpdateWrapper<>();
+        updateWrapper.eq(Employee::getId,id)
+                .set(Employee::getStatus,status);
+        employeeMapper.update(updateWrapper);
     }
 
-    /**
-     * 根据iD查询用户信息
-     * @param id
-     * @return
-     */
     @Override
     public Employee getById(Long id) {
-        Employee employee = employeeMapper.getById(id);
+        Employee employee = employeeMapper.selectById(id);
         employee.setPassword("****");
         return employee;
     }
 
-    /**
-     * 编辑员工信息
-     * @param employeeDTO
-     */
     @Override
+    @Transactional
     public void update(EmployeeDTO employeeDTO) {
         Employee employee = new Employee();
-        BeanUtils.copyProperties(employeeDTO, employee);
-
+        BeanUtils.copyProperties(employeeDTO,employee);
         employee.setUpdateTime(LocalDateTime.now());
         employee.setUpdateUser(BaseContext.getCurrentId());
-        employeeMapper.update(employee);
+        employeeMapper.updateById(employee);
     }
 
 }
