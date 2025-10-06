@@ -587,14 +587,14 @@ public class OrderServiceImpl implements OrderService {
         String userCoordinate = HttpClientUtil.doGet("https://api.map.baidu.com/geocoding/v3", map);
 
 //        数据解析
-        location = JSON.parseObject("result").getJSONObject("location");
+        location = JSON.parseObject(userCoordinate).getJSONObject("result").getJSONObject("location");
         lat = location.getString("lat");
         lng = location.getString("lng");
 
 //        用户收货地址经纬度坐标
         String userLngLat = lat + "," + lng;
 
-        map.put("orgin", shopLngLat);
+        map.put("origin", shopLngLat);
         map.put("destination", userLngLat);
         map.put("steps_info", "0");
 
